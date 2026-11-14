@@ -1,0 +1,292 @@
+RETURN READY — NATIONWIDE JOB DATA SOURCES API ENDPOINTS, FEEDS, AND
+OFFICIAL DOCUMENTATION Prepared: November 14, 2026
+
+IMPORTANT NOTES - There is no single unrestricted public API that
+provides every job opening in the United States. - An accessible public
+career page does not automatically mean its data may be harvested,
+stored, or republished. - Confirm current documentation, authentication,
+pricing, rate limits, attribution, and redistribution terms before
+production use. - Endpoints containing {PLACEHOLDER} values must be
+populated with the employer’s board token, company slug, or other
+identifier. - Treat provider APIs, employer-specific ATS board feeds,
+partner-only feeds, and ordinary job-search websites as different source
+types. - Do not bypass authentication, anti-bot controls, or site
+restrictions.
+
+============================================================ 1.
+GOVERNMENT AND PUBLIC-SECTOR SOURCES
+============================================================
+
+1.1 USAJOBS — U.S. federal government jobs Official developer portal:
+https://developer.usajobs.gov/ API documentation / getting started:
+https://developer.usajobs.gov/API-Reference API access: - API
+credentials are required. - Use the current official documentation for
+the required headers, query parameters, and pagination. - Federal
+vacancy search endpoint is documented in the USAJOBS API reference; do
+not hard-code an unverified endpoint pattern. Coverage: - Federal
+government vacancies. Notes: - Not a feed for all state, county, or
+municipal jobs.
+
+1.2 CareerOneStop — U.S. Department of Labor-sponsored career services
+API explorer: https://api.careeronestop.org/api-explorer/ API portal:
+https://www.careeronestop.org/Developers/WebAPI/web-api.aspx Access: -
+API key / user authorization required. Coverage: - Job search and career
+information, depending on the specific API operation. Notes: - Review
+the API explorer for the current operation paths and parameters.
+
+1.3 National Labor Exchange (NLx) Data access:
+https://nlxresearchhub.org/data-access Main site: https://www.usnlx.com/
+Access: - Data access may require approval, a data-use agreement, or a
+partnership. Coverage: - Broad U.S. job-posting data, subject to
+approved access. Notes: - Do not assume unrestricted public API access.
+
+1.4 Utah Department of Workforce Services / Employ Utah Main site:
+https://jobs.utah.gov/ Utah job search:
+https://jobs.utah.gov/jsp/utjobs/utjobs.jsp Employment information
+dashboard: https://jobs.utah.gov/wi/empinfo/index.html Access: - Public
+job-search website and labor-market information. - No generally
+available public job-search API is confirmed here. Recommended next
+step: - Contact Utah DWS and ask about authorized UWORKS / Employ Utah
+API access, partner feeds, data-sharing agreements, and redistribution
+rights.
+
+1.5 State, county, and municipal job portals There is no single standard
+endpoint for all state and local government vacancies. Discovery sources
+/ examples: - State workforce agency job banks: locate each state’s
+official workforce agency and job-bank documentation. - County and city
+government career pages: use each jurisdiction’s official careers
+portal. - GovernmentJobs / NEOGOV: https://www.governmentjobs.com/
+Employer-specific career pages and integrations vary; confirm API or
+feed access with the provider/employer. - California state jobs:
+https://www.calcareers.ca.gov/ Notes: - A public search page is not
+proof of an open API. - Build a source registry by state and
+jurisdiction and record the official access method for each.
+
+1.6 U.S. Department of Labor data DOL Data Portal: https://data.dol.gov/
+Notes: - Useful for labor-market and related public datasets. - It is
+not a universal real-time vacancy API.
+
+1.7 Other public-sector categories to onboard individually - Public
+school districts and state education departments. - Public universities
+and community colleges. - State and local public healthcare systems. -
+Transit authorities, utilities, courts, and special districts. - Federal
+agencies with agency-specific career sites. For each, identify the
+official careers page, ATS vendor, documented API/feed, and
+redistribution terms.
+
+============================================================ 2.
+COMMERCIAL JOB-SEARCH AGGREGATOR APIs
+============================================================
+
+2.1 Adzuna Developer portal: https://developer.adzuna.com/ Typical
+documented search URL pattern:
+https://api.adzuna.com/v1/api/jobs/{COUNTRY}/search/{PAGE} Example
+country code for U.S. searches: us Typical query parameters include
+app_id, app_key, results_per_page, what, where, and related filters.
+Authentication: - App ID and API key. Notes: - Verify current plan,
+quota, fields, and redistribution terms in the developer portal.
+
+2.2 Jooble API information: https://jooble.org/api/about Typical
+endpoint pattern: https://jooble.org/api/{API_KEY} Method: - POST with
+JSON search criteria, as documented by Jooble. Authentication: - API
+key. Notes: - Confirm current request schema, quotas, and permitted
+display/redistribution.
+
+2.3 Talroo API documentation: https://docs.talroo.com/api/search
+Access: - Confirm account / partner access and current authentication
+requirements. Notes: - Commercial product; check pricing and permitted
+use with Talroo.
+
+2.4 JobsPiper Documentation: https://docs.jobspipe.dev/ Access: - Review
+current documentation for endpoint paths, authentication, and commercial
+terms. Notes: - Validate provider coverage and data licensing before
+integrating.
+
+2.5 Other vendor leads — verify before implementation The following
+names have been mentioned as potential providers, but should not be
+treated as validated production sources until their official API
+documentation, company status, endpoints, and terms are independently
+confirmed: - Job Opportunities API - Jobven - VeritaHire
+
+============================================================ 3. EMPLOYER
+ATS PUBLIC JOB-BOARD ENDPOINTS
+============================================================
+
+These are generally employer-specific public posting feeds. They do not
+provide a universal search API across every employer using that ATS. The
+employer’s board identifier / token is required.
+
+3.1 Greenhouse Official Job Board API documentation:
+https://developers.greenhouse.io/job-board.html Public jobs endpoint
+pattern: GET
+https://boards-api.greenhouse.io/v1/boards/{BOARD_TOKEN}/jobs Include
+job content: GET
+https://boards-api.greenhouse.io/v1/boards/{BOARD_TOKEN}/jobs?content=true
+Identifier: - Employer’s Greenhouse board token. Notes: - Use only for
+employers whose public Greenhouse board is known and accessible. - Check
+Greenhouse documentation and applicable terms for permitted use.
+
+3.2 Lever Official postings API reference:
+https://github.com/lever/postings-api Public postings endpoint pattern:
+GET https://api.lever.co/v0/postings/{COMPANY} JSON mode: GET
+https://api.lever.co/v0/postings/{COMPANY}?mode=json Identifier: - Lever
+employer/company slug. Notes: - Employer-specific postings; verify
+current documentation and terms.
+
+3.3 Ashby Official Public Job Posting API documentation:
+https://developers.ashbyhq.com/docs/public-job-posting-api Public
+endpoint pattern: GET
+https://api.ashbyhq.com/posting-api/job-board/{JOB_BOARD_NAME}
+Compensation option shown in provider documentation: GET
+https://api.ashbyhq.com/posting-api/job-board/{JOB_BOARD_NAME}?includeCompensation=true
+Identifier: - Ashby job board name. Notes: - Confirm currently supported
+query parameters and permitted use in official docs.
+
+3.4 SmartRecruiters Developer portal: https://dev.smartrecruiters.com/
+Public postings endpoint pattern: GET
+https://api.smartrecruiters.com/v1/companies/{COMPANY_IDENTIFIER}/postings
+Identifier: - SmartRecruiters company identifier. Notes: - Check current
+API version, pagination, authentication, and terms.
+
+3.5 Other ATS platforms to investigate employer by employer The
+following systems may expose public career pages, employer-specific
+feeds, partner APIs, or authenticated integrations. Do not assume a
+universal public job-search endpoint: - Workable:
+https://www.workable.com/ - Recruitee: https://recruitee.com/ - Breezy
+HR: https://breezy.hr/ - Teamtailor: https://www.teamtailor.com/ -
+Personio: https://www.personio.com/ - Workday:
+https://www.workday.com/ - BambooHR: https://www.bamboohr.com/ -
+Rippling: https://www.rippling.com/ - Pinpoint:
+https://www.pinpointhq.com/ - JazzHR: https://www.jazzhr.com/ - Zoho
+Recruit: https://www.zoho.com/recruit/ - iCIMS: https://www.icims.com/ -
+Oracle Recruiting Cloud:
+https://www.oracle.com/human-capital-management/recruiting/ - SAP
+SuccessFactors:
+https://www.sap.com/products/hcm/recruiting-software.html - ADP:
+https://www.adp.com/ - UKG: https://www.ukg.com/ - Dayforce:
+https://www.dayforce.com/ - Jobvite: https://www.jobvite.com/ - Taleo:
+https://www.oracle.com/human-capital-management/ - Avature:
+https://www.avature.net/ - PageUp: https://www.pageuppeople.com/ -
+Eightfold AI: https://eightfold.ai/ Implementation note: - Discover the
+ATS used by each employer, then locate that employer’s official public
+board and provider documentation. - Some ATS APIs are intended only for
+the employer or authorized integration partners.
+
+============================================================ 4.
+REMOTE-JOB API / FEED SOURCES
+============================================================
+
+4.1 Remotive API endpoint: https://remotive.com/api/remote-jobs API
+information / usage guidance: https://remotive.com/remote-jobs/api
+Notes: - Review attribution, feed delay, rate limits, and usage
+restrictions before displaying or redistributing listings.
+
+4.2 Remote OK API endpoint: https://remoteok.com/api Notes: - Review the
+site’s current API/JSON usage terms, attribution expectations, and rate
+limits before production use.
+
+4.3 Arbeitnow API and implementation information:
+https://www.arbeitnow.com/blog/job-board-api Notes: - Review current
+endpoint details, pagination, coverage, and terms in the provider’s
+documentation.
+
+============================================================ 5. JOB
+SITES / NETWORKS THAT MAY REQUIRE PARTNERSHIP
+============================================================
+
+These are useful potential sources for Return Ready’s source-discovery
+roadmap. Do not assume they offer an unrestricted public job-search API.
+
+-   Indeed: https://www.indeed.com/ Note: Indeed’s Job Sync API is for
+    authorized ATS partners managing job postings; it is not a general
+    public job-search API.
+-   LinkedIn Jobs: https://www.linkedin.com/jobs/
+-   Glassdoor: https://www.glassdoor.com/Job/
+-   ZipRecruiter: https://www.ziprecruiter.com/
+-   Monster: https://www.monster.com/
+-   Dice: https://www.dice.com/
+-   Wellfound: https://wellfound.com/jobs
+-   FlexJobs: https://www.flexjobs.com/
+-   Idealist: https://www.idealist.org/
+-   Work for Good: https://www.workforgood.org/
+-   AARP Job Board: https://www.aarp.org/work/job-search/
+-   Path Forward: https://www.pathforward.org/
+-   iRelaunch: https://www.irelaunch.com/
+-   Apprenticeship.gov: https://www.apprenticeship.gov/
+-   AmeriCorps: https://www.americorps.gov/ Recommended approach:
+-   Contact each provider about approved API access, affiliate/partner
+    feeds, licensing, or data-sharing arrangements.
+-   If no approved access exists, link users to the source rather than
+    scraping or republishing restricted listings.
+
+============================================================ 6.
+RECOMMENDED INITIAL INTEGRATION SET
+============================================================
+
+Suggested first implementation wave: 1. CareerOneStop API — broad U.S.
+job-search access; API key required. 2. Utah DWS / Employ Utah — request
+authorized feed or partner access. 3. Adzuna API — commercial
+aggregator; API credentials and terms review. 4. Jooble API — commercial
+aggregator; API key and terms review. 5. Greenhouse public job boards —
+employer-specific endpoints. 6. Lever public postings —
+employer-specific endpoints. 7. Ashby public job boards —
+employer-specific endpoints. 8. USAJOBS API — federal vacancies;
+credentials required. 9. Remotive / Remote OK / Arbeitnow — additional
+remote listings, subject to terms. 10. NLx — pursue approved data access
+/ partnership.
+
+============================================================ 7. SOURCE
+REGISTRY FIELDS TO TRACK
+============================================================
+
+For every source, store: - source_id - source_name - source_category
+(government, aggregator, ATS, remote, nonprofit, etc.) -
+sector_coverage - geographic_coverage - access_method (REST, JSON, XML,
+RSS, partner feed, manual link) - endpoint_template -
+authentication_required - approval_or_partnership_required -
+pricing_or_free_tier - rate_limit - pagination_method -
+refresh_frequency_hours - available_fields - attribution_required -
+redistribution_approved - terms_url - permission_status (confirmed,
+pending, restricted, unclear) - integration_status (active, testing,
+pending, inactive, failed) - last_verified_at - notes
+
+============================================================ 8.
+NORMALIZED JOB RECORD FIELDS
+============================================================
+
+Recommended normalized fields: - job_id - source_id - source_job_id -
+job_title - employer_name - employer_sector - industry -
+job_description - country - state - county - city - postal_code -
+work_mode (remote, hybrid, onsite) - employment_type (full-time,
+part-time, contract, temporary, seasonal, internship, apprenticeship,
+returnship) - salary_min - salary_max - salary_currency -
+salary_frequency - experience_level - education_requirements - skills -
+schedule - flexibility_details - accessibility_details -
+career_reentry_or_training - posted_date - closing_date -
+application_url - source_url - last_seen_at - last_synced_at -
+active_status
+
+For caregiver-focused matching, derive additional tags after
+ingestion: - flexible_hours - predictable_schedule -
+part_time_possible - remote_possible - transferable_skills -
+career_break_friendly - returnship - entry_level - training_provided -
+childcare_schedule_compatible
+
+============================================================ 9.
+IMPLEMENTATION AND COMPLIANCE CHECKLIST
+============================================================
+
+[ ] Confirm official documentation for every endpoint. [ ] Confirm
+whether API keys or partner approval are required. [ ] Review terms of
+service and data licensing. [ ] Confirm whether storing, displaying,
+caching, and redistributing job data are permitted. [ ] Implement rate
+limiting, retries, pagination, and backoff. [ ] Record source
+attribution and original application URL. [ ] Deduplicate jobs across
+multiple sources. [ ] Expire or revalidate stale postings. [ ] Keep
+source-level last-verified and last-synced timestamps. [ ] Do not scrape
+restricted websites or bypass anti-bot protections. [ ] Provide users
+with the original application link. [ ] Clearly label source coverage
+and listing freshness. [ ] Recheck endpoint documentation and terms
+regularly.
+
+END OF FILE
