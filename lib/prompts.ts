@@ -7,13 +7,14 @@ Rules:
 - Keep caregiving as caregiving. Never turn it into a job title.
 - org and role come only from what they said; use null when not stated. years is a range like "2015–2021". lastUsedYear is the last year they did it, or null.
 - Group evidence into skills. A skill only listed with no example gets no evidence and the note "No example given." Otherwise note is null.
-- careerBreak: years as "2021 – 2026" (use currentYear from the input for "now"), briefReason as a short neutral label such as "Family caregiving", detailedReason from their words. Never include medical conditions, diagnoses, or other health details in either reason. Use null if no break is described.
+- careerBreak: years as "2021 – 2026" (use currentYear from the input for "now"). briefReason: a neutral label such as "Family caregiving". detailedReason: a short résumé phrase of at most 6 words with no pronouns, such as "Raising young children" or "Caring for a parent". Never include medical conditions, diagnoses, health details, schedules, or plans in either reason. Use null if no break is described.
+- If a person names two roles at the same employer, create evidence for each role with its own role and years.
 - Use ids e1, e2, ... for evidence and s1, s2, ... for skills.`;
 
 export const CATEGORIES_PROMPT = `You compare a caregiver's work evidence with the key skills of several job areas.
 
 For every key skill in every area, choose one status using only the evidence list:
-- supported: paid or volunteer evidence directly shows this skill.
+- supported: paid or volunteer evidence directly shows this skill. A short phrase in the person's own words is enough; for example, "scheduled meetings" supports "Scheduling meetings and keeping timelines", and "coordinated vendors" supports "Coordinating vendors or contractors".
 - refresh: evidence exists, the skill is a software or tool skill, and the latest example is before 2022.
 - needs_clarification: evidence is related but the scope is unclear, or the only evidence is caregiving. Write one short, specific question for the person.
 - missing: no evidence.
@@ -25,6 +26,7 @@ export const RESUME_PROMPT = `You write a one-page résumé for a caregiver retu
 
 Rules:
 - Every bullet and the summary cite the evidence ids they rely on.
+- Start each bullet with a past-tense verb and end it with a period. You may join two closely related items from the same job into one bullet and cite both ids.
 - Keep the person's own verbs. Do not upgrade "helped" to "led" or "managed".
 - Do not add numbers, percentages, team sizes, tools, or results that are not in the evidence.
 - summary: two sentences, no first person.
@@ -38,10 +40,10 @@ Rules:
 
 export const ASSESS_PROMPT = `You check a caregiver's evidence against one job's requirements.
 
-If the job lists requirements, assess exactly those and keep their ids, text, kind, and required values. If it does not, list the requirements stated in postingText (ids r1, r2, ...). Set required to true only when the posting says required, false when it says preferred or nice to have, and null when it does not say. Ignore schedule, hours, and location; code checks those.
+If the job lists requirements, return exactly one entry for each, in the same order, with the same id (r1, r2, ...), text, kind, and required value. If it does not, list the requirements stated in postingText (ids r1, r2, ...). Set required to true only when the posting says required, false when it says preferred or nice to have, and null when it does not say. Ignore schedule, hours, and location; code checks those.
 
 For each requirement choose one status:
-- met: the evidence directly shows it.
+- met: the evidence directly shows it. A short phrase in the person's own words is enough; for example, "managed calendars" and "scheduled meetings" meet "Experience managing calendars and coordinating meetings".
 - partial: the evidence shows related experience, but the specific tasks, recency, or level are uncertain.
 - not_shown: no evidence. This means the profile does not show it yet, not that the person lacks the skill.
 - credential_check: a certification, license, permit, degree, or background check that the employer must verify.

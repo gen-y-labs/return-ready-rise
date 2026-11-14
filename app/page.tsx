@@ -3,6 +3,7 @@
 import { useState } from "react";
 import personasJson from "@/data/personas.json";
 import { AreasStep } from "@/components/AreasStep";
+import { Logo } from "@/components/Logo";
 import { ReadinessStep } from "@/components/ReadinessStep";
 import { ResumeStep } from "@/components/ResumeStep";
 import { StoryStep } from "@/components/StoryStep";
@@ -59,7 +60,12 @@ export default function Home() {
   const [done, setDone] = useState<Set<string>>(new Set());
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [fallback, setFallback] = useState(false);
+  // True while the loaded example is unchanged, so every step serves its saved results.
+  const [usingSaved, setUsingSaved] = useState(false);
+
+  const loaded = personas.find((p) => p.id === personaId);
+  const storyUnchanged = !!loaded && JSON.stringify(loaded.story) === JSON.stringify(story);
+  const savedId = usingSaved ? personaId : null;
 
   // Evidence the user kept. Caregiving is only used when they tick it.
   const confirmed: Profile | null = profile && {
@@ -89,13 +95,16 @@ export default function Home() {
     setProfile(null);
     setFits(null);
     setResume(null);
-    setFallback(false);
+    setUsingSaved(false);
     setStep(1);
   }
 
   async function analyze() {
     const res = await run("extract", () =>
-      postJson<{ profile: Profile; fallback: boolean }>("/api/extract", { story, personaId }),
+      postJson<{ profile: Profile; saved: boolean }>("/api/extract", {
+        story,
+        personaId: storyUnchanged ? personaId : null,
+      }),
     );
     if (!res) return;
     setProfile(res.profile);
@@ -103,7 +112,7 @@ export default function Home() {
     setCaregivingOn(new Set());
     setFits(null);
     setResume(null);
-    setFallback(res.fallback);
+    setUsingSaved(res.saved);
   }
 
   async function loadJobs(categoryId: string) {
@@ -114,12 +123,11 @@ export default function Home() {
 
   async function seeAreas() {
     const res = await run("categories", () =>
-      postJson<{ fits: CategoryFit[]; fallback: boolean }>("/api/categories", { profile: confirmed, personaId }),
+      postJson<{ fits: CategoryFit[]; saved: boolean }>("/api/categories", { profile: confirmed, personaId: savedId }),
     );
     if (!res) return;
     setFits(res.fits);
-    setFallback((f) => f || res.fallback);
-    setSelected(res.fits[0].categoryId);
+        setSelected(res.fits[0].categoryId);
     setResume(null);
     setStep(2);
     await loadJobs(res.fits[0].categoryId);
@@ -134,28 +142,26 @@ export default function Home() {
   async function buildResume(categoryId: string) {
     const fit = fits!.find((f) => f.categoryId === categoryId)!;
     const res = await run("resume", () =>
-      postJson<{ resume: Resume; fallback: boolean }>("/api/resume", { profile: confirmed, fit, personaId }),
+      postJson<{ resume: Resume; saved: boolean }>("/api/resume", { profile: confirmed, fit, personaId: savedId }),
     );
     if (!res) return;
     setResume(res.resume);
-    setFallback((f) => f || res.fallback);
-    setStep(4);
+        setStep(4);
   }
 
   async function assess(job: JobWithFit) {
     const res = await run("assess", () =>
-      postJson<{ requirements: AssessedRequirement[]; fallback: boolean }>("/api/readiness/assess", {
+      postJson<{ requirements: AssessedRequirement[]; saved: boolean }>("/api/readiness/assess", {
         job,
         evidence: confirmed!.evidence,
-        personaId,
+        personaId: savedId,
       }),
     );
     if (!res) return;
     setRequirements(res.requirements);
     setPlan(null);
     setDone(new Set());
-    setFallback((f) => f || res.fallback);
-  }
+      }
 
   async function checkReadiness(job: JobWithFit) {
     setReadinessJob(job);
@@ -169,20 +175,19 @@ export default function Home() {
 
   async function makePlan() {
     const res = await run("plan", () =>
-      postJson<{ plan: Plan; fallback: boolean }>("/api/readiness/plan", {
+      postJson<{ plan: Plan; saved: boolean }>("/api/readiness/plan", {
         job: readinessJob,
         requirements,
         answers,
         evidence: confirmed!.evidence,
         prepMinutes,
-        personaId,
+        personaId: savedId,
       }),
     );
     if (!res) return;
     setPlan(res.plan);
     setDone(new Set());
-    setFallback((f) => f || res.fallback);
-  }
+      }
 
   function addEvidence(text: string, source: Source) {
     setProfile(
@@ -211,22 +216,24 @@ export default function Home() {
 
   return (
     <>
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-10 print:hidden">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-4 justify-between">
+      <header className="bg-white border-b border-slate-200 sm:sticky top-0 z-10 print:hidden">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-x-4 gap-y-2 justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-teal-600 text-white grid place-items-center font-bold">R</div>
+            <Logo className="w-9 h-9 shrink-0" />
             <div>
-              <div className="font-semibold">ReturnReady</div>
-              <div className="text-xs text-slate-500">Find where your experience fits, and prepare your next application.</div>
+              <div className="font-semibold">Return Ready Rise</div>
+              <div className="hidden sm:block text-xs text-slate-500">
+                Find where your experience fits, and prepare your next application.
+              </div>
             </div>
           </div>
-          <nav className="flex flex-wrap gap-1 text-sm">
+          <nav className="flex gap-1 text-xs sm:text-sm w-full sm:w-auto overflow-x-auto -mx-1 px-1">
             {STEPS.map((label, i) => (
               <button
                 key={label}
                 disabled={!reachable[i]}
                 onClick={() => setStep(i + 1)}
-                className={`px-3 py-1.5 rounded-full disabled:opacity-40 ${
+                className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-full disabled:opacity-40 ${
                   step === i + 1 ? "bg-teal-600 text-white" : "text-slate-600 hover:bg-slate-100"
                 }`}
               >
@@ -238,13 +245,16 @@ export default function Home() {
       </header>
 
       <main className="max-w-7xl w-full mx-auto px-4 py-6 print:p-0 print:max-w-none">
-        {fallback && (
-          <div className="mb-4 rounded-lg bg-amber-50 border border-amber-200 px-4 py-2 text-sm text-amber-900 print:hidden">
-            Live AI is unavailable, so you&apos;re seeing saved demo results for this example.
+        {usingSaved && (
+          <div className="mb-4 rounded-lg bg-white border border-slate-200 px-4 py-2 text-xs text-slate-600 print:hidden">
+            Example profile: showing saved AI results so the demo runs instantly. Edit the story or write your own to run live
+            AI.
           </div>
         )}
         {error && (
-          <div className="mb-4 rounded-lg bg-rose-50 border border-rose-200 px-4 py-2 text-sm text-rose-800 print:hidden">{error}</div>
+          <div className="mb-4 rounded-lg bg-amber-50 border border-amber-200 px-4 py-2 text-sm text-amber-900 print:hidden">
+            {error}
+          </div>
         )}
 
         {step === 1 && (

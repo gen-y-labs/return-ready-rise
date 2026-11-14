@@ -12,6 +12,7 @@ import type {
 } from "./types";
 
 const requiredRank = (required: boolean | null) => (required === true ? 0 : required === null ? 1 : 2);
+const normId = (id: string) => id.toLowerCase().replace(/[^a-z0-9]/g, "");
 const PRIORITY_RANK = { before_applying: 0, ask_employer: 1, alongside_applying: 2 };
 
 export function mergeAssessment(
@@ -26,8 +27,11 @@ export function mergeAssessment(
   // Listed requirements are trusted data: keep their text, kind, and required flag.
   const rows = fromPosting
     ? ai.requirements
-    : listed.map((req) => {
-        const found = ai.requirements.find((r) => r.id === req.id);
+    : listed.map((req, i) => {
+        // Models sometimes reformat ids ("R1", "1"); fall back to position when the counts line up.
+        const found =
+          ai.requirements.find((r) => normId(r.id) === normId(req.id)) ??
+          (ai.requirements.length === listed.length ? ai.requirements[i] : undefined);
         return {
           ...req,
           status: found?.status ?? ("not_shown" as const),

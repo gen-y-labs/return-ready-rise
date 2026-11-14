@@ -1,5 +1,5 @@
 import { checkBullets } from "@/lib/checks";
-import { askClaude, withFallback } from "@/lib/claude";
+import { askAI, errorResponse, savedOrLive } from "@/lib/ai";
 import { fixtures, practiceTasks } from "@/lib/data";
 import { RESUME_PROMPT } from "@/lib/prompts";
 import { ResumeDraftSchema, type CategoryFit, type Profile, type Resume } from "@/lib/types";
@@ -12,16 +12,14 @@ export async function POST(req: Request) {
   };
 
   try {
-    const { data: draft, fallback } = await withFallback(
-      () =>
-        askClaude(ResumeDraftSchema, RESUME_PROMPT, {
-          jobArea: fit.name,
-          keySkills: fit.matches.map((m) => ({ id: m.keySkillId, text: m.text, status: m.status })),
-          evidence: profile.evidence,
-          careerBreak: profile.careerBreak,
-          practiceTasks: practiceTasks.map(({ id, title }) => ({ id, title })),
-        }),
-      personaId ? fixtures[personaId]?.resumes[fit.categoryId] : undefined,
+    const { data: draft, saved } = await savedOrLive(personaId ? fixtures[personaId]?.resumes[fit.categoryId] : undefined, () =>
+      askAI(ResumeDraftSchema, RESUME_PROMPT, {
+        jobArea: fit.name,
+        keySkills: fit.matches.map((m) => ({ id: m.keySkillId, text: m.text, status: m.status })),
+        evidence: profile.evidence,
+        careerBreak: profile.careerBreak,
+        practiceTasks: practiceTasks.map(({ id, title }) => ({ id, title })),
+      }),
     );
 
     const allowed = new Map(profile.evidence.map((e) => [e.id, e]));
@@ -36,7 +34,11 @@ export async function POST(req: Request) {
         titles: {
           minimal: "Career break",
           brief: `Career break · ${brk.briefReason}`,
-          detailed: `Career break · ${brk.detailedReason}`,
+          // A sentence-length reason doesn't fit a résumé heading; use the brief label instead.
+          detailed:
+            brk.detailedReason.length <= 40 && !/[.;]/.test(brk.detailedReason)
+              ? `Career break · ${brk.detailedReason}`
+              : `Career break · ${brk.briefReason}`,
         },
         bullets: checkBullets(draft.breakBullets.filter((b) => !isPractice(b)), allowed, brk.years),
       },
@@ -52,9 +54,8 @@ export async function POST(req: Request) {
         return task ? [{ ...task, keySkillId: p.keySkillId }] : [];
       }),
     };
-    return Response.json({ resume, fallback });
+    return Response.json({ resume, saved });
   } catch (err) {
-    console.error("resume failed", err);
-    return Response.json({ error: "We couldn't build your résumé. Please try again." }, { status: 502 });
+    return errorResponse("resume", err, "We couldn't build your résumé. Please try again.");
   }
 }

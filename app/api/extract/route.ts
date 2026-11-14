@@ -1,4 +1,4 @@
-import { askClaude, withFallback } from "@/lib/claude";
+import { askAI, errorResponse, savedOrLive } from "@/lib/ai";
 import { fixtures } from "@/lib/data";
 import { EXTRACT_PROMPT } from "@/lib/prompts";
 import { ProfileSchema, type Story } from "@/lib/types";
@@ -13,13 +13,11 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { data, fallback } = await withFallback(
-      () => askClaude(ProfileSchema, EXTRACT_PROMPT, { currentYear: new Date().getFullYear(), ...story }),
-      personaId ? fixtures[personaId]?.profile : undefined,
+    const { data, saved } = await savedOrLive(personaId ? fixtures[personaId]?.profile : undefined, () =>
+      askAI(ProfileSchema, EXTRACT_PROMPT, { currentYear: new Date().getFullYear(), ...story }),
     );
-    return Response.json({ profile: data, fallback });
+    return Response.json({ profile: data, saved });
   } catch (err) {
-    console.error("extract failed", err);
-    return Response.json({ error: "We couldn't analyze your story. Please try again." }, { status: 502 });
+    return errorResponse("extract", err, "We couldn't analyze your story. Please try again.");
   }
 }

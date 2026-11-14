@@ -1,4 +1,4 @@
-import { askClaude, withFallback } from "@/lib/claude";
+import { askAI, errorResponse, savedOrLive } from "@/lib/ai";
 import { fixtures } from "@/lib/data";
 import { ASSESS_PROMPT } from "@/lib/prompts";
 import { mergeAssessment } from "@/lib/readiness";
@@ -12,23 +12,20 @@ export async function POST(req: Request) {
   };
 
   try {
-    const { data, fallback } = await withFallback(
-      () =>
-        askClaude(AssessmentSchema, ASSESS_PROMPT, {
-          job: {
-            title: job.title,
-            company: job.company,
-            summary: job.summary,
-            requirements: job.requirements?.length ? job.requirements : null,
-            postingText: job.requirements?.length ? null : (job.details ?? job.summary),
-          },
-          evidence,
-        }),
-      personaId ? fixtures[personaId]?.readiness[job.id]?.assess : undefined,
+    const { data, saved } = await savedOrLive(personaId ? fixtures[personaId]?.readiness[job.id]?.assess : undefined, () =>
+      askAI(AssessmentSchema, ASSESS_PROMPT, {
+        job: {
+          title: job.title,
+          company: job.company,
+          summary: job.summary,
+          requirements: job.requirements?.length ? job.requirements : null,
+          postingText: job.requirements?.length ? null : (job.details ?? job.summary),
+        },
+        evidence,
+      }),
     );
-    return Response.json({ requirements: mergeAssessment(job, data, evidence), fallback });
+    return Response.json({ requirements: mergeAssessment(job, data, evidence), saved });
   } catch (err) {
-    console.error("readiness assess failed", err);
-    return Response.json({ error: "We couldn't check your readiness for this job. Please try again." }, { status: 502 });
+    return errorResponse("readiness assess", err, "We couldn't check your readiness for this job. Please try again.");
   }
 }

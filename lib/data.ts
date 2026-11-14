@@ -7,6 +7,16 @@ import categoriesPriya from "@/data/fixtures/categories-priya.json";
 import resumePriyaAdmin from "@/data/fixtures/resume-priya-administrative-support.json";
 import assessPriyaMvcs from "@/data/fixtures/readiness-priya-mvcs-assess.json";
 import planPriyaMvcs from "@/data/fixtures/readiness-priya-mvcs-plan.json";
+import extractDavid from "@/data/fixtures/extract-david.json";
+import categoriesDavid from "@/data/fixtures/categories-david.json";
+import resumeDavidOps from "@/data/fixtures/resume-david-operations-coordination.json";
+import assessDavidGranite from "@/data/fixtures/readiness-david-granite-assess.json";
+import planDavidGranite from "@/data/fixtures/readiness-david-granite-plan.json";
+import extractEmily from "@/data/fixtures/extract-emily.json";
+import categoriesEmily from "@/data/fixtures/categories-emily.json";
+import resumeEmilyFrontDesk from "@/data/fixtures/resume-emily-front-desk-reception.json";
+import assessEmilyTimp from "@/data/fixtures/readiness-emily-timp-dental-assess.json";
+import planEmilyTimp from "@/data/fixtures/readiness-emily-timp-dental-plan.json";
 import {
   AssessmentSchema,
   CategoryMatchesSchema,
@@ -32,17 +42,29 @@ type Fixture = {
   readiness: Record<string, { assess: z.infer<typeof AssessmentSchema>; plan: z.infer<typeof PlanSchema> }>;
 };
 
-// Saved responses for the demo persona, used when the Claude API is unavailable.
+const readiness = (assess: unknown, plan: unknown) => ({
+  assess: AssessmentSchema.parse(assess),
+  plan: PlanSchema.parse(plan),
+});
+
+// Saved AI results for the example profiles, served instantly while the example is unchanged.
 export const fixtures: Record<string, Fixture> = {
   priya: {
     profile: ProfileSchema.parse(extractPriya),
     categories: CategoryMatchesSchema.parse(categoriesPriya),
     resumes: { "administrative-support": ResumeDraftSchema.parse(resumePriyaAdmin) },
-    readiness: {
-      "mvcs-admin-coordinator": {
-        assess: AssessmentSchema.parse(assessPriyaMvcs),
-        plan: PlanSchema.parse(planPriyaMvcs),
-      },
-    },
+    readiness: { "mvcs-admin-coordinator": readiness(assessPriyaMvcs, planPriyaMvcs) },
+  },
+  david: {
+    profile: ProfileSchema.parse(extractDavid),
+    categories: CategoryMatchesSchema.parse(categoriesDavid),
+    resumes: { "operations-coordination": ResumeDraftSchema.parse(resumeDavidOps) },
+    readiness: { "granite-peak-ops-manager": readiness(assessDavidGranite, planDavidGranite) },
+  },
+  emily: {
+    profile: ProfileSchema.parse(extractEmily),
+    categories: CategoryMatchesSchema.parse(categoriesEmily),
+    resumes: { "front-desk-reception": ResumeDraftSchema.parse(resumeEmilyFrontDesk) },
+    readiness: { "timp-dental-reception": readiness(assessEmilyTimp, planEmilyTimp) },
   },
 };
