@@ -1,4 +1,4 @@
-Build “ReturnReady”: an AI assistant that turns a caregiver’s past experience and current availability into a credible application for a suitable job.
+Build “Return Ready Rise”: an AI assistant that turns a caregiver’s past experience and current availability into a credible application for a suitable job.
 
 The core promise: “Find where your experience fits—and prepare your next application.” Aim to shorten preparation time; getting hired faster is the longer-term outcome to validate.
 
@@ -39,7 +39,7 @@ Avoid a misleading “92% employability” score. Use supported, needs clarifica
 
 4. Differentiate through the complete workflow
 
-Return-to-work services already exist: Path Forward provides returnship opportunities, and iRelaunch offers a job board and career reentry resources. Position ReturnReady as a focused application-preparation tool that could complement those services. Path Forward
+Return-to-work services already exist: Path Forward provides returnship opportunities, and iRelaunch offers a job board and career reentry resources. Position Return Ready Rise as a focused application-preparation tool that could complement those services. Path Forward
 
 Your proposed distinction is the connection between:
 
