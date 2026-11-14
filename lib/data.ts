@@ -5,9 +5,13 @@ import tasksJson from "@/data/practice-tasks.json";
 import extractPriya from "@/data/fixtures/extract-priya.json";
 import categoriesPriya from "@/data/fixtures/categories-priya.json";
 import resumePriyaAdmin from "@/data/fixtures/resume-priya-administrative-support.json";
+import assessPriyaMvcs from "@/data/fixtures/readiness-priya-mvcs-assess.json";
+import planPriyaMvcs from "@/data/fixtures/readiness-priya-mvcs-plan.json";
 import {
+  AssessmentSchema,
   CategoryMatchesSchema,
   JobListingSchema,
+  PlanSchema,
   ProfileSchema,
   ResumeDraftSchema,
   type Category,
@@ -21,7 +25,12 @@ export const categories: Category[] = categoriesJson;
 export const practiceTasks: PracticeTask[] = tasksJson;
 export const savedJobs = z.array(JobListingSchema).parse(jobsJson);
 
-type Fixture = { profile: Profile; categories: CategoryMatches; resumes: Record<string, ResumeDraft> };
+type Fixture = {
+  profile: Profile;
+  categories: CategoryMatches;
+  resumes: Record<string, ResumeDraft>;
+  readiness: Record<string, { assess: z.infer<typeof AssessmentSchema>; plan: z.infer<typeof PlanSchema> }>;
+};
 
 // Saved responses for the demo persona, used when the Claude API is unavailable.
 export const fixtures: Record<string, Fixture> = {
@@ -29,5 +38,11 @@ export const fixtures: Record<string, Fixture> = {
     profile: ProfileSchema.parse(extractPriya),
     categories: CategoryMatchesSchema.parse(categoriesPriya),
     resumes: { "administrative-support": ResumeDraftSchema.parse(resumePriyaAdmin) },
+    readiness: {
+      "mvcs-admin-coordinator": {
+        assess: AssessmentSchema.parse(assessPriyaMvcs),
+        plan: PlanSchema.parse(planPriyaMvcs),
+      },
+    },
   },
 };

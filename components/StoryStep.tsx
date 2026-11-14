@@ -33,6 +33,7 @@ const SOURCE_LABEL: Record<Evidence["source"], [string, string]> = {
   volunteer: ["During break · Volunteer", "bg-indigo-50 text-indigo-800 border-indigo-400"],
   caregiving: ["During break · Caregiving", "bg-rose-50 text-rose-800 border-rose-300"],
   education: ["Education", "bg-slate-100 text-slate-700 border-slate-400"],
+  practice: ["Practice project", "bg-amber-50 text-amber-800 border-amber-400"],
 };
 
 const input = "w-full border border-slate-300 rounded-lg p-2 text-sm bg-white";

@@ -3,10 +3,25 @@
 import { useState } from "react";
 import personasJson from "@/data/personas.json";
 import { AreasStep } from "@/components/AreasStep";
+import { ReadinessStep } from "@/components/ReadinessStep";
 import { ResumeStep } from "@/components/ResumeStep";
 import { StoryStep } from "@/components/StoryStep";
 import { postJson } from "@/lib/client";
-import type { Availability, CategoryFit, Contact, JobsResponse, Persona, Profile, Resume, Story } from "@/lib/types";
+import type {
+  Answer,
+  AssessedRequirement,
+  Availability,
+  CategoryFit,
+  Contact,
+  JobWithFit,
+  JobsResponse,
+  Persona,
+  Plan,
+  Profile,
+  Resume,
+  Source,
+  Story,
+} from "@/lib/types";
 
 const personas = personasJson as Persona[];
 
@@ -21,7 +36,7 @@ const DEFAULT_AVAILABILITY: Availability = {
   workplace: ["remote", "hybrid", "onsite"],
 };
 
-const STEPS = ["Tell us your story", "Your job areas", "Your résumé"];
+const STEPS = ["Tell us your story", "Your job areas", "Get ready", "Your résumé"];
 
 export default function Home() {
   const [step, setStep] = useState(1);
@@ -36,6 +51,12 @@ export default function Home() {
   const [selected, setSelected] = useState<string | null>(null);
   const [jobs, setJobs] = useState<JobsResponse | null>(null);
   const [resume, setResume] = useState<Resume | null>(null);
+  const [readinessJob, setReadinessJob] = useState<JobWithFit | null>(null);
+  const [requirements, setRequirements] = useState<AssessedRequirement[] | null>(null);
+  const [answers, setAnswers] = useState<Record<string, Answer>>({});
+  const [prepMinutes, setPrepMinutes] = useState(120);
+  const [plan, setPlan] = useState<Plan | null>(null);
+  const [done, setDone] = useState<Set<string>>(new Set());
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [fallback, setFallback] = useState(false);
@@ -110,15 +131,70 @@ export default function Home() {
     await loadJobs(categoryId);
   }
 
-  async function buildResume() {
-    const fit = fits!.find((f) => f.categoryId === selected)!;
+  async function buildResume(categoryId: string) {
+    const fit = fits!.find((f) => f.categoryId === categoryId)!;
     const res = await run("resume", () =>
       postJson<{ resume: Resume; fallback: boolean }>("/api/resume", { profile: confirmed, fit, personaId }),
     );
     if (!res) return;
     setResume(res.resume);
     setFallback((f) => f || res.fallback);
+    setStep(4);
+  }
+
+  async function assess(job: JobWithFit) {
+    const res = await run("assess", () =>
+      postJson<{ requirements: AssessedRequirement[]; fallback: boolean }>("/api/readiness/assess", {
+        job,
+        evidence: confirmed!.evidence,
+        personaId,
+      }),
+    );
+    if (!res) return;
+    setRequirements(res.requirements);
+    setPlan(null);
+    setDone(new Set());
+    setFallback((f) => f || res.fallback);
+  }
+
+  async function checkReadiness(job: JobWithFit) {
+    setReadinessJob(job);
+    setRequirements(null);
+    setAnswers({});
+    setPlan(null);
+    setDone(new Set());
     setStep(3);
+    await assess(job);
+  }
+
+  async function makePlan() {
+    const res = await run("plan", () =>
+      postJson<{ plan: Plan; fallback: boolean }>("/api/readiness/plan", {
+        job: readinessJob,
+        requirements,
+        answers,
+        evidence: confirmed!.evidence,
+        prepMinutes,
+        personaId,
+      }),
+    );
+    if (!res) return;
+    setPlan(res.plan);
+    setDone(new Set());
+    setFallback((f) => f || res.fallback);
+  }
+
+  function addEvidence(text: string, source: Source) {
+    setProfile(
+      (p) =>
+        p && {
+          ...p,
+          evidence: [
+            ...p.evidence,
+            { id: `u${p.evidence.length + 1}`, text, source, org: null, role: null, years: "", lastUsedYear: new Date().getFullYear() },
+          ],
+        },
+    );
   }
 
   const leftOut = profile
@@ -131,7 +207,7 @@ export default function Home() {
       ]
     : [];
 
-  const reachable = [true, !!fits, !!resume];
+  const reachable = [true, !!fits, !!readinessJob, !!resume];
 
   return (
     <>
@@ -208,11 +284,40 @@ export default function Home() {
             jobs={jobs}
             availability={availability}
             busy={busy}
-            onBuildResume={buildResume}
+            onBuildResume={() => buildResume(selected)}
+            onCheckReadiness={checkReadiness}
           />
         )}
 
-        {step === 3 && resume && confirmed && (
+        {step === 3 && readinessJob && confirmed && (
+          <ReadinessStep
+            job={readinessJob}
+            requirements={requirements}
+            evidence={confirmed.evidence}
+            answers={answers}
+            onAnswer={(id, a) => setAnswers((x) => ({ ...x, [id]: a }))}
+            onAddEvidence={addEvidence}
+            prepMinutes={prepMinutes}
+            setPrepMinutes={setPrepMinutes}
+            plan={plan}
+            done={done}
+            onToggleDone={(id) =>
+              setDone((d) => {
+                const next = new Set(d);
+                if (next.has(id)) next.delete(id);
+                else next.add(id);
+                return next;
+              })
+            }
+            busy={busy}
+            onMakePlan={makePlan}
+            onReassess={() => assess(readinessJob)}
+            onBuildResume={() => buildResume(readinessJob.categoryId)}
+            onBack={() => setStep(2)}
+          />
+        )}
+
+        {step === 4 && resume && confirmed && (
           <ResumeStep
             resume={resume}
             setResume={setResume}

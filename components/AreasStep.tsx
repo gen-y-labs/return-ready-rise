@@ -19,9 +19,10 @@ type Props = {
   availability: Availability;
   busy: string | null;
   onBuildResume: () => void;
+  onCheckReadiness: (job: JobWithFit) => void;
 };
 
-function JobCard({ job }: { job: JobWithFit }) {
+function JobCard({ job, onCheck }: { job: JobWithFit; onCheck: () => void }) {
   const a = job.arrangement;
   return (
     <div className={`bg-white rounded-xl border p-3 ${a.status === "fits" ? "border-emerald-300" : "border-slate-200"}`}>
@@ -47,19 +48,24 @@ function JobCard({ job }: { job: JobWithFit }) {
           <span className="font-medium">Before applying:</span> {a.confirm.join(" ")}
         </div>
       )}
-      <div className="flex justify-between items-center mt-2">
+      <div className="flex flex-wrap justify-between items-center gap-2 mt-2">
         <SourceChip job={job} />
-        {job.url && (
-          <a href={job.url} target="_blank" rel="noreferrer" className="text-xs text-teal-700 underline">
-            View posting ↗
-          </a>
-        )}
+        <div className="flex items-center gap-3">
+          {job.url && (
+            <a href={job.url} target="_blank" rel="noreferrer" className="text-xs text-teal-700 underline">
+              View posting ↗
+            </a>
+          )}
+          <button onClick={onCheck} className="text-xs border border-teal-600 text-teal-700 rounded-full px-3 py-1 hover:bg-teal-50">
+            Check my readiness
+          </button>
+        </div>
       </div>
     </div>
   );
 }
 
-export function AreasStep({ fits, selected, onSelect, jobs, availability: av, busy, onBuildResume }: Props) {
+export function AreasStep({ fits, selected, onSelect, jobs, availability: av, busy, onBuildResume, onCheckReadiness }: Props) {
   const fit = fits.find((f) => f.categoryId === selected)!;
   const groups = (["day", "week", "month", "unknown"] as Recency[])
     .map((r) => ({ recency: r, jobs: jobs?.jobs.filter((j) => j.recency === r) ?? [] }))
@@ -143,7 +149,7 @@ export function AreasStep({ fits, selected, onSelect, jobs, availability: av, bu
                   </div>
                   <div className="mt-2 space-y-3">
                     {g.jobs.map((j) => (
-                      <JobCard key={j.id} job={j} />
+                      <JobCard key={j.id} job={j} onCheck={() => onCheckReadiness(j)} />
                     ))}
                   </div>
                 </div>

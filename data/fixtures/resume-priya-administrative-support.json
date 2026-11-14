@@ -1,11 +1,30 @@
 {
   "summary": {
     "text": "Administrative coordinator with six years of experience managing calendars, scheduling meetings, coordinating vendors, and preparing reports in Excel. During a career break, helped organize school events and volunteer schedules.",
-    "evidenceIds": ["e1", "e2", "e3", "e4", "e5", "e6"]
+    "evidenceIds": [
+      "e1",
+      "e2",
+      "e3",
+      "e4",
+      "e5",
+      "e6"
+    ]
   },
   "breakBullets": [
-    { "id": "b1", "text": "Helped organize school events.", "evidenceIds": ["e5"] },
-    { "id": "b2", "text": "Helped organize volunteer schedules for school events.", "evidenceIds": ["e6"] }
+    {
+      "id": "b1",
+      "text": "Helped organize school events.",
+      "evidenceIds": [
+        "e5"
+      ]
+    },
+    {
+      "id": "b2",
+      "text": "Helped organize volunteer schedules for school events.",
+      "evidenceIds": [
+        "e6"
+      ]
+    }
   ],
   "experience": [
     {
@@ -14,16 +33,48 @@
       "location": "Orem, UT",
       "dates": "2015 – 2021",
       "bullets": [
-        { "id": "b3", "text": "Managed calendars and scheduled meetings.", "evidenceIds": ["e1", "e2"] },
-        { "id": "b4", "text": "Coordinated vendors.", "evidenceIds": ["e3"] },
-        { "id": "b5", "text": "Prepared weekly reports in Excel for 3 department managers, cutting reporting time by 20%.", "evidenceIds": ["e4"] }
+        {
+          "id": "b3",
+          "text": "Managed calendars and scheduled meetings.",
+          "evidenceIds": [
+            "e1",
+            "e2"
+          ]
+        },
+        {
+          "id": "b4",
+          "text": "Coordinated vendors.",
+          "evidenceIds": [
+            "e3"
+          ]
+        },
+        {
+          "id": "b5",
+          "text": "Prepared weekly reports in Excel for 3 department managers, cutting reporting time by 20%.",
+          "evidenceIds": [
+            "e4"
+          ]
+        }
       ]
     }
   ],
-  "skills": ["Calendar management", "Meeting scheduling", "Vendor coordination", "Microsoft Excel", "Event and volunteer coordination"],
+  "practiceBullets": [],
+  "skills": [
+    "Calendar management",
+    "Meeting scheduling",
+    "Vendor coordination",
+    "Microsoft Excel",
+    "Event and volunteer coordination"
+  ],
   "education": [],
   "prepTasks": [
-    { "taskId": "excel-basics", "keySkillId": "k3" },
-    { "taskId": "office-tools-basics", "keySkillId": "k5" }
+    {
+      "taskId": "excel-basics",
+      "keySkillId": "k3"
+    },
+    {
+      "taskId": "office-tools-basics",
+      "keySkillId": "k5"
+    }
   ]
 }

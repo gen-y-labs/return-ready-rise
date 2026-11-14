@@ -5,7 +5,7 @@ import { checkBullets } from "@/lib/checks";
 import type { Bullet, Contact, Evidence, Resume } from "@/lib/types";
 
 type Level = "minimal" | "brief" | "detailed";
-type Section = "break" | number;
+type Section = "break" | "practice" | number;
 
 const LEVELS: [Level, string][] = [["minimal", "Dates only"], ["brief", "Brief"], ["detailed", "Detailed"]];
 
@@ -94,22 +94,26 @@ export function ResumeStep({ resume, setResume, contact, evidence, areaName, lef
   function updateBullet(section: Section, index: number, text: string | null) {
     setResume((r) => {
       if (!r) return r;
-      const extra = section === "break" ? (r.careerBreak?.years ?? "") : r.experience[section].dates;
+      const extra =
+        section === "break" ? (r.careerBreak?.years ?? "") : section === "practice" ? "" : r.experience[section].dates;
       const apply = (bullets: Bullet[]) =>
         bullets.flatMap((b, i) => {
           if (i !== index) return [b];
           if (text === null || !text) return [];
           return [{ ...b, text, flags: checkBullets([{ ...b, text }], allowed, extra)[0]?.flags ?? [] }];
         });
-      return section === "break"
-        ? { ...r, careerBreak: r.careerBreak && { ...r.careerBreak, bullets: apply(r.careerBreak.bullets) } }
-        : { ...r, experience: r.experience.map((x, i) => (i === section ? { ...x, bullets: apply(x.bullets) } : x)) };
+      if (section === "break") {
+        return { ...r, careerBreak: r.careerBreak && { ...r.careerBreak, bullets: apply(r.careerBreak.bullets) } };
+      }
+      if (section === "practice") return { ...r, practice: apply(r.practice) };
+      return { ...r, experience: r.experience.map((x, i) => (i === section ? { ...x, bullets: apply(x.bullets) } : x)) };
     });
   }
 
   const flagged = [
     ...(resume.careerBreak?.bullets ?? []),
     ...resume.experience.flatMap((x) => x.bullets),
+    ...resume.practice,
   ].filter((b) => b.flags.length);
 
   function asText(): string {
@@ -120,6 +124,7 @@ export function ResumeStep({ resume, setResume, contact, evidence, areaName, lef
     for (const x of resume.experience) {
       lines.push(`${x.title}, ${x.org}${x.location ? `, ${x.location}` : ""} (${x.dates})`, ...x.bullets.map((b) => `- ${b.text}`), "");
     }
+    if (resume.practice.length) lines.push("PRACTICE PROJECTS", ...resume.practice.map((b) => `- ${b.text}`), "");
     lines.push("SKILLS", resume.skills.join(" · "));
     if (resume.education.length) lines.push("", "EDUCATION", ...resume.education);
     return lines.join("\n");
@@ -257,6 +262,12 @@ export function ResumeStep({ resume, setResume, contact, evidence, areaName, lef
             </div>
           ))}
 
+          {resume.practice.length > 0 && (
+            <>
+              <h3 className={heading}>Practice projects</h3>
+              <BulletList bullets={resume.practice} onChange={(i, t) => updateBullet("practice", i, t)} />
+            </>
+          )}
           {resume.skills.length > 0 && (
             <>
               <h3 className={heading}>Skills</h3>

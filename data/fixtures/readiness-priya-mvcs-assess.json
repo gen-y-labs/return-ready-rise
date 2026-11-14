@@ -1,0 +1,74 @@
+{
+  "requirements": [
+    {
+      "id": "r1",
+      "text": "At least two years of administrative, office coordination, or similar experience (experience before a career break counts)",
+      "kind": "experience",
+      "required": true,
+      "status": "met",
+      "evidenceIds": ["e1", "e2", "e3", "e4"],
+      "uncertain": "",
+      "question": null
+    },
+    {
+      "id": "r2",
+      "text": "Experience managing calendars and coordinating meetings",
+      "kind": "skill",
+      "required": true,
+      "status": "met",
+      "evidenceIds": ["e1", "e2"],
+      "uncertain": "",
+      "question": null
+    },
+    {
+      "id": "r3",
+      "text": "Basic Excel: entering data, formatting tables, sorting, filtering, and simple formulas such as SUM",
+      "kind": "tool",
+      "required": true,
+      "status": "partial",
+      "evidenceIds": ["e4"],
+      "uncertain": "You prepared reports in Excel until 2021, but your profile doesn't show whether you used sorting, filtering, or SUM, or how comfortable you are with them today.",
+      "question": "Have you used sorting, filtering, and formulas such as SUM? Would you feel comfortable completing a short exercise using them today?"
+    },
+    {
+      "id": "r4",
+      "text": "Clear written communication and strong organizational skills",
+      "kind": "skill",
+      "required": true,
+      "status": "partial",
+      "evidenceIds": ["e1", "e2", "e3"],
+      "uncertain": "Your examples show strong organizing, but nothing yet about your writing.",
+      "question": "Did your role include writing emails, notices, or meeting notes? Can you describe one example?"
+    },
+    {
+      "id": "r5",
+      "text": "Experience coordinating vendors",
+      "kind": "skill",
+      "required": false,
+      "status": "met",
+      "evidenceIds": ["e3"],
+      "uncertain": "",
+      "question": null
+    },
+    {
+      "id": "r6",
+      "text": "Experience organizing events or volunteer schedules",
+      "kind": "skill",
+      "required": false,
+      "status": "met",
+      "evidenceIds": ["e5", "e6"],
+      "uncertain": "",
+      "question": null
+    },
+    {
+      "id": "r7",
+      "text": "Familiarity with Microsoft Outlook, Teams, and shared document storage",
+      "kind": "tool",
+      "required": false,
+      "status": "not_shown",
+      "evidenceIds": [],
+      "uncertain": "You didn't mention Outlook, Teams, or shared folders. That doesn't mean you haven't used them.",
+      "question": "Have you used Outlook, Teams, or shared folders such as OneDrive or Google Drive?"
+    }
+  ]
+}

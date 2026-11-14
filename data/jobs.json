@@ -10,10 +10,65 @@
     "company": "Mountain View Community Services",
     "location": "Lehi, UT",
     "workplace": "hybrid",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "09:00", "end": "14:00", "hoursPerWeek": 25 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "09:00",
+      "end": "14:00",
+      "hoursPerWeek": 25
+    },
     "scheduleText": "Mon–Fri 9 a.m.–2 p.m. MT, 25 hrs/week. Office Tue and Thu, remote Mon, Wed, Fri. No evenings or weekends.",
     "pay": "$23–$27/hr",
-    "summary": "Manage schedules, meetings, vendors, and records for a small community-services team. Career returners encouraged; Excel and Teams refresher training included."
+    "summary": "Manage schedules, meetings, vendors, and records for a small community-services team. Career returners encouraged; Excel and Teams refresher training included.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "At least two years of administrative, office coordination, or similar experience (experience before a career break counts)",
+        "kind": "experience",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Experience managing calendars and coordinating meetings",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Basic Excel: entering data, formatting tables, sorting, filtering, and simple formulas such as SUM",
+        "kind": "tool",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "Clear written communication and strong organizational skills",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r5",
+        "text": "Experience coordinating vendors",
+        "kind": "skill",
+        "required": false
+      },
+      {
+        "id": "r6",
+        "text": "Experience organizing events or volunteer schedules",
+        "kind": "skill",
+        "required": false
+      },
+      {
+        "id": "r7",
+        "text": "Familiarity with Microsoft Outlook, Teams, and shared document storage",
+        "kind": "tool",
+        "required": false
+      }
+    ]
   },
   {
     "id": "canyon-ridge-admin-remote",
@@ -26,10 +81,53 @@
     "company": "Canyon Ridge Software",
     "location": "Remote, Utah-based team",
     "workplace": "remote",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "08:00", "end": "17:00", "hoursPerWeek": 40 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:00",
+      "end": "17:00",
+      "hoursPerWeek": 40
+    },
     "scheduleText": "Full-time. Online 8 a.m.–5 p.m. MT.",
     "pay": "$42,000–$48,000/yr",
-    "summary": "Support a growing software team with calendars, travel, and meeting notes."
+    "summary": "Support a growing software team with calendars, travel, and meeting notes.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Manage calendars and travel for a team",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Take meeting notes and track action items",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Google Workspace or Microsoft 365",
+        "kind": "tool",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "1+ year of administrative experience",
+        "kind": "experience",
+        "required": true
+      },
+      {
+        "id": "r5",
+        "text": "Experience at a software company",
+        "kind": "experience",
+        "required": false
+      }
+    ]
   },
   {
     "id": "tandem-scheduling-remote",
@@ -45,7 +143,27 @@
     "schedule": null,
     "scheduleText": "Remote. Hours are not listed.",
     "pay": "$20–$24/hr",
-    "summary": "Schedule tutoring sessions and keep instructor calendars up to date."
+    "summary": "Schedule tutoring sessions and keep instructor calendars up to date.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Schedule sessions across several people's calendars",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Answer scheduling emails promptly and clearly",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Online scheduling tools such as Calendly",
+        "kind": "tool",
+        "required": false
+      }
+    ]
   },
   {
     "id": "timp-pediatrics-office-admin",
@@ -58,10 +176,41 @@
     "company": "Timpanogos Pediatrics",
     "location": "Orem, UT",
     "workplace": "onsite",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "08:00", "end": "13:00", "hoursPerWeek": 25 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:00",
+      "end": "13:00",
+      "hoursPerWeek": 25
+    },
     "scheduleText": "Mornings, 8 a.m.–1 p.m., Monday to Friday.",
     "pay": "$19–$22/hr",
-    "summary": "Run the front office for a four-provider pediatric clinic."
+    "summary": "Run the front office for a four-provider pediatric clinic.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Front-desk check-in and appointment scheduling",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Insurance verification",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Electronic health record (EHR) experience",
+        "kind": "tool",
+        "required": false
+      }
+    ]
   },
   {
     "id": "wasatch-ops-pt",
@@ -74,10 +223,47 @@
     "company": "Wasatch Community Health Center",
     "location": "American Fork, UT",
     "workplace": "hybrid",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "09:00", "end": "14:00", "hoursPerWeek": 25 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "09:00",
+      "end": "14:00",
+      "hoursPerWeek": 25
+    },
     "scheduleText": "25 hrs/week, 9 a.m.–2 p.m. On-site Tuesdays and Thursdays.",
     "pay": "$24–$27/hr",
-    "summary": "Keep clinic supplies, vendors, and weekly schedules running for three sites."
+    "summary": "Keep clinic supplies, vendors, and weekly schedules running for three sites.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Coordinate vendors and supply orders",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Track inventory in Excel",
+        "kind": "tool",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Keep weekly schedules for three sites",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "Experience in a healthcare setting",
+        "kind": "experience",
+        "required": false
+      }
+    ]
   },
   {
     "id": "northpoint-project-pt",
@@ -90,10 +276,47 @@
     "company": "Northpoint Builders",
     "location": "Lehi, UT",
     "workplace": "hybrid",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "09:00", "end": "15:00", "hoursPerWeek": 30 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "09:00",
+      "end": "15:00",
+      "hoursPerWeek": 30
+    },
     "scheduleText": "30 hrs/week, 9 a.m.–3 p.m. Site visits some mornings.",
     "pay": "$25–$28/hr",
-    "summary": "Track timelines, permits, and subcontractor schedules for home renovation projects."
+    "summary": "Track timelines, permits, and subcontractor schedules for home renovation projects.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Track project timelines and deadlines",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Coordinate subcontractors",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Familiarity with building permits",
+        "kind": "experience",
+        "required": false
+      },
+      {
+        "id": "r4",
+        "text": "Smartsheet or a similar project tool",
+        "kind": "tool",
+        "required": false
+      }
+    ]
   },
   {
     "id": "brightline-project-slc",
@@ -106,10 +329,47 @@
     "company": "Brightline Facilities Group",
     "location": "Salt Lake City, UT",
     "workplace": "onsite",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "08:30", "end": "17:00", "hoursPerWeek": 40 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:30",
+      "end": "17:00",
+      "hoursPerWeek": 40
+    },
     "scheduleText": "Full-time, on-site, 8:30 a.m.–5 p.m.",
     "pay": "$55,000–$62,000/yr",
-    "summary": "Coordinate renovation projects across commercial properties."
+    "summary": "Coordinate renovation projects across commercial properties.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "CAPM or PMP certification",
+        "kind": "credential",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Manage project plans in Smartsheet or Asana",
+        "kind": "tool",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Coordinate contractors and vendors",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "Schedule site visits and inspections",
+        "kind": "skill",
+        "required": true
+      }
+    ]
   },
   {
     "id": "valley-food-program",
@@ -123,7 +383,12 @@
     "location": "Provo, UT",
     "workplace": "hybrid",
     "schedule": {
-      "days": ["Mon", "Tue", "Wed", "Thu"],
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu"
+      ],
       "start": "10:00",
       "end": "14:00",
       "hoursPerWeek": 16,
@@ -131,7 +396,33 @@
     },
     "scheduleText": "16 hrs/week, 10 a.m.–2 p.m. Monday to Thursday, plus about one evening event per month.",
     "pay": "$17–$19/hr",
-    "summary": "Recruit, schedule, and support the volunteers who staff pantry shifts."
+    "summary": "Recruit, schedule, and support the volunteers who staff pantry shifts.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Recruit and schedule volunteers",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Track volunteer hours in Google Sheets",
+        "kind": "tool",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Food handler permit, or willing to get one in the first month",
+        "kind": "credential",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "Write a monthly newsletter (Mailchimp preferred)",
+        "kind": "tool",
+        "required": false
+      }
+    ]
   },
   {
     "id": "timp-dental-reception",
@@ -144,10 +435,39 @@
     "company": "Timpanogos Family Dental",
     "location": "Orem, UT",
     "workplace": "onsite",
-    "schedule": { "days": ["Mon", "Wed", "Fri"], "start": "09:00", "end": "14:00", "hoursPerWeek": 15 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "start": "09:00",
+      "end": "14:00",
+      "hoursPerWeek": 15
+    },
     "scheduleText": "Mon, Wed, Fri, 9 a.m.–2 p.m.",
     "pay": "$16–$18/hr",
-    "summary": "Entry-level. Greet patients, answer phones, and take payments. We train you on our scheduling software."
+    "summary": "Entry-level. Greet patients, answer phones, and take payments. We train you on our scheduling software.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Greet patients and answer phones",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Take payments",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Dental or medical office experience",
+        "kind": "experience",
+        "required": false
+      }
+    ]
   },
   {
     "id": "canyon-creek-school-office",
@@ -160,10 +480,47 @@
     "company": "Canyon Creek Charter School",
     "location": "Orem, UT",
     "workplace": "onsite",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "08:00", "end": "12:30", "hoursPerWeek": 22 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:00",
+      "end": "12:30",
+      "hoursPerWeek": 22
+    },
     "scheduleText": "School days, 8 a.m.–12:30 p.m.",
     "pay": "$15–$17/hr",
-    "summary": "Check in visitors, answer parent calls, and help with attendance records."
+    "summary": "Check in visitors, answer parent calls, and help with attendance records.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Check in visitors",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Answer parent calls",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Keep attendance records",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "Pass a school background check",
+        "kind": "credential",
+        "required": true
+      }
+    ]
   },
   {
     "id": "riverwoods-front-desk",
@@ -176,10 +533,41 @@
     "company": "Riverwoods Community Center",
     "location": "Provo, UT",
     "workplace": "onsite",
-    "schedule": { "days": ["Tue", "Wed", "Thu", "Fri", "Sat"], "start": "12:00", "end": "17:00", "hoursPerWeek": 25 },
+    "schedule": {
+      "days": [
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ],
+      "start": "12:00",
+      "end": "17:00",
+      "hoursPerWeek": 25
+    },
     "scheduleText": "Tuesday to Saturday, noon–5 p.m.",
     "pay": "$15–$16/hr",
-    "summary": "Greet members, take class sign-ups, and handle day-pass payments."
+    "summary": "Greet members, take class sign-ups, and handle day-pass payments.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Greet members and take class sign-ups",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Handle day-pass payments",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Basic computer skills",
+        "kind": "tool",
+        "required": true
+      }
+    ]
   },
   {
     "id": "bluebird-support-pt-remote",
@@ -192,10 +580,40 @@
     "company": "Bluebird Home Services",
     "location": "Remote, United States",
     "workplace": "remote",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu"], "start": "10:00", "end": "14:00", "hoursPerWeek": 16 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu"
+      ],
+      "start": "10:00",
+      "end": "14:00",
+      "hoursPerWeek": 16
+    },
     "scheduleText": "Mon–Thu, 10 a.m.–2 p.m. MT, 16 hrs/week. Fixed shifts.",
     "pay": "$18–$20/hr",
-    "summary": "Answer customer chats and emails about appointments and billing. Zendesk experience a plus."
+    "summary": "Answer customer chats and emails about appointments and billing. Zendesk experience a plus.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Answer customer chats and emails about appointments and billing",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "1+ year of customer support experience",
+        "kind": "experience",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Zendesk experience",
+        "kind": "tool",
+        "required": false
+      }
+    ]
   },
   {
     "id": "sunrise-care-remote-flex",
@@ -211,7 +629,27 @@
     "schedule": null,
     "scheduleText": "Remote, \"flexible schedule\". Hours not listed.",
     "pay": "$17–$19/hr",
-    "summary": "Help customers track orders and resolve billing questions by phone and chat."
+    "summary": "Help customers track orders and resolve billing questions by phone and chat.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Phone and chat support",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Resolve order-tracking and billing questions",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Knowledge of medical supplies",
+        "kind": "experience",
+        "required": false
+      }
+    ]
   },
   {
     "id": "peakline-support-remote",
@@ -224,9 +662,40 @@
     "company": "Peakline Telecom",
     "location": "Remote, United States",
     "workplace": "remote",
-    "schedule": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "start": "08:00", "end": "17:00", "hoursPerWeek": 40 },
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:00",
+      "end": "17:00",
+      "hoursPerWeek": 40
+    },
     "scheduleText": "Full-time, 8 a.m.–5 p.m. MT. Rotating Saturdays.",
     "pay": "$38,000–$42,000/yr",
-    "summary": "Handle inbound calls about internet service and billing."
+    "summary": "Handle inbound calls about internet service and billing.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Inbound phone support",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Billing troubleshooting",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Internet service troubleshooting",
+        "kind": "skill",
+        "required": false
+      }
+    ]
   }
 ]

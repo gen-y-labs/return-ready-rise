@@ -74,6 +74,7 @@ async function adzuna(category: Category): Promise<JobListing[] | null> {
       scheduleText: `${j.contract_time === "part_time" ? "Part-time. " : j.contract_time === "full_time" ? "Full-time. " : ""}Hours not listed.`,
       pay: payRange(j.salary_min, j.salary_max),
       summary: plainText(j.description),
+      details: plainText(j.description, 2000),
     }));
   });
 }
@@ -120,6 +121,7 @@ async function remotive(category: Category): Promise<JobListing[]> {
         scheduleText: `${j.job_type === "part_time" ? "Part-time" : "Full-time"}. Hours not listed.`,
         pay: j.salary || "Pay not listed",
         summary: plainText(j.description),
+        details: plainText(j.description, 2000),
       }));
   });
 }

@@ -1,6 +1,7 @@
 import { z } from "zod";
 
-export const SourceSchema = z.enum(["paid", "volunteer", "caregiving", "education"]);
+// "practice" is set only by the readiness checklist, never by extraction.
+export const SourceSchema = z.enum(["paid", "volunteer", "caregiving", "education", "practice"]);
 export type Source = z.infer<typeof SourceSchema>;
 
 export const EvidenceSchema = z.object({
@@ -100,6 +101,16 @@ export type CategoryFit = {
   matches: (CategoryMatches["categories"][number]["matches"][number] & { text: string })[];
 };
 
+const RequirementKindSchema = z.enum(["skill", "tool", "experience", "credential"]);
+
+export const JobRequirementSchema = z.object({
+  id: z.string(),
+  text: z.string(),
+  kind: RequirementKindSchema,
+  required: z.boolean(),
+});
+export type JobRequirement = z.infer<typeof JobRequirementSchema>;
+
 export const JobListingSchema = z.object({
   id: z.string(),
   source: z.enum(["jobs.utah.gov", "adzuna", "remotive", "sample"]),
@@ -124,6 +135,8 @@ export const JobListingSchema = z.object({
   scheduleText: z.string(),
   pay: z.string(),
   summary: z.string(),
+  requirements: z.array(JobRequirementSchema).optional(),
+  details: z.string().optional(),
 });
 export type JobListing = z.infer<typeof JobListingSchema>;
 
@@ -151,6 +164,7 @@ export const ResumeDraftSchema = z.object({
       bullets: z.array(BulletDraftSchema),
     }),
   ),
+  practiceBullets: z.array(BulletDraftSchema),
   skills: z.array(z.string()),
   education: z.array(z.string()),
   prepTasks: z.array(z.object({ taskId: z.string(), keySkillId: z.string() })),
@@ -170,7 +184,54 @@ export type Resume = {
     bullets: Bullet[];
   } | null;
   experience: { title: string; org: string; location: string | null; dates: string; bullets: Bullet[] }[];
+  practice: Bullet[];
   skills: string[];
   education: string[];
   prepSteps: (PracticeTask & { keySkillId: string })[];
 };
+
+export const AssessmentSchema = z.object({
+  requirements: z.array(
+    z.object({
+      id: z.string(),
+      text: z.string(),
+      kind: RequirementKindSchema,
+      required: z.boolean().nullable(),
+      status: z.enum(["met", "partial", "not_shown", "credential_check"]),
+      evidenceIds: z.array(z.string()),
+      uncertain: z.string(),
+      question: z.string().nullable(),
+    }),
+  ),
+});
+export type AssessedRequirement = z.infer<typeof AssessmentSchema>["requirements"][number] & {
+  fromPosting: boolean;
+};
+
+export type Answer = "have" | "refresh" | "learn" | "unsure";
+
+export type GapType = "not_in_profile" | "partly_shown" | "unconfirmed" | "refresh" | "missing_skill" | "credential";
+
+export const PlanSchema = z.object({
+  items: z.array(
+    z.object({
+      requirementId: z.string(),
+      action: z.enum(["improve_profile", "refresh", "learn", "demonstrate", "verify_requirement", "ask_employer"]),
+      activity: z.string(),
+      why: z.string(),
+      minutes: z.number(),
+      doneWhen: z.string(),
+      evidenceToAdd: z.string(),
+      priority: z.enum(["before_applying", "ask_employer", "alongside_applying"]),
+      searchSuggestions: z.array(z.string()),
+    }),
+  ),
+});
+export type PlanItem = z.infer<typeof PlanSchema>["items"][number] & {
+  id: string;
+  requirementText: string;
+  required: boolean | null;
+  gapType: GapType;
+  movedForTime: boolean;
+};
+export type Plan = { items: PlanItem[]; beforeMinutes: number; prepMinutes: number };

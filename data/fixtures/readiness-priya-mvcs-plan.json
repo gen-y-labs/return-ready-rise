@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "requirementId": "r3",
+      "action": "refresh",
+      "activity": "Organize a sample vendor list of about 20 rows by service type and payment status, using sort and filter.",
+      "why": "Excel is a required skill, and the interview includes a short spreadsheet exercise.",
+      "minutes": 20,
+      "doneWhen": "You can sort and filter the list without looking up the steps.",
+      "evidenceToAdd": "Describe which tasks you completed and when, as a practice project.",
+      "priority": "before_applying",
+      "searchSuggestions": ["Excel sort and filter tutorial", "Excel for the web free"]
+    },
+    {
+      "requirementId": "r3",
+      "action": "refresh",
+      "activity": "Create a small monthly expense tracker with a SUM total for each category.",
+      "why": "The posting names SUM as a required formula.",
+      "minutes": 20,
+      "doneWhen": "The totals update correctly when you change a number.",
+      "evidenceToAdd": "Add it as a clearly labeled practice project.",
+      "priority": "before_applying",
+      "searchSuggestions": ["Excel SUM formula basics"]
+    },
+    {
+      "requirementId": "r3",
+      "action": "demonstrate",
+      "activity": "Produce a simple one-page weekly expense summary from your tracker.",
+      "why": "A short work sample shows you can turn data into the basic weekly reports this role prepares.",
+      "minutes": 25,
+      "doneWhen": "You have a one-page summary you could show in an interview.",
+      "evidenceToAdd": "Include the work sample as a practice project if appropriate.",
+      "priority": "before_applying",
+      "searchSuggestions": ["simple weekly report template Excel"]
+    },
+    {
+      "requirementId": "r4",
+      "action": "improve_profile",
+      "activity": "Write one or two sentences about the emails, notices, or meeting notes you wrote as an administrative coordinator.",
+      "why": "Clear written communication is required, and your profile doesn't show it yet.",
+      "minutes": 10,
+      "doneWhen": "Your example says what you wrote, for whom, and how often.",
+      "evidenceToAdd": "Add the example to your profile once you've confirmed it's accurate.",
+      "priority": "before_applying",
+      "searchSuggestions": []
+    },
+    {
+      "requirementId": "r7",
+      "action": "ask_employer",
+      "activity": "Ask whether Outlook, Teams, and shared-drive training is part of onboarding.",
+      "why": "This is a preferred skill, and the posting says refresher training on Excel and Teams is included.",
+      "minutes": 5,
+      "doneWhen": "You know whether training covers it.",
+      "evidenceToAdd": "",
+      "priority": "ask_employer",
+      "searchSuggestions": []
+    },
+    {
+      "requirementId": "r7",
+      "action": "learn",
+      "activity": "In free Outlook.com and Teams accounts, schedule a recurring meeting and share a file in a chat.",
+      "why": "Basic practice helps you join the team's tools quickly, even with training provided.",
+      "minutes": 30,
+      "doneWhen": "You've sent a meeting invite and shared a file in Teams.",
+      "evidenceToAdd": "Describe what you set up, as a practice project.",
+      "priority": "alongside_applying",
+      "searchSuggestions": ["Microsoft Teams basics for beginners", "Outlook calendar share and recurring meeting"]
+    }
+  ]
+}

@@ -25,6 +25,8 @@ export async function POST(req: Request) {
     );
 
     const allowed = new Map(profile.evidence.map((e) => [e.id, e]));
+    // Practice projects are never shown as employment, and employment never as practice.
+    const isPractice = (b: { evidenceIds: string[] }) => b.evidenceIds.every((id) => allowed.get(id)?.source === "practice");
     const brk = profile.careerBreak;
     const resume: Resume = {
       categoryId: fit.categoryId,
@@ -36,9 +38,13 @@ export async function POST(req: Request) {
           brief: `Career break · ${brk.briefReason}`,
           detailed: `Career break · ${brk.detailedReason}`,
         },
-        bullets: checkBullets(draft.breakBullets, allowed, brk.years),
+        bullets: checkBullets(draft.breakBullets.filter((b) => !isPractice(b)), allowed, brk.years),
       },
-      experience: draft.experience.map((job) => ({ ...job, bullets: checkBullets(job.bullets, allowed, job.dates) })),
+      experience: draft.experience.map((job) => ({
+        ...job,
+        bullets: checkBullets(job.bullets.filter((b) => !isPractice(b)), allowed, job.dates),
+      })),
+      practice: checkBullets(draft.practiceBullets.filter(isPractice), allowed),
       skills: draft.skills,
       education: draft.education,
       prepSteps: draft.prepTasks.slice(0, 3).flatMap((p) => {
