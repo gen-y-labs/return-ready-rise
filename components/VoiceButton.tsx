@@ -56,12 +56,12 @@ export function VoiceButton({ onText }: { onText: (text: string) => void }) {
   }
 
   return (
-    <span className="flex items-center gap-2">
+    <span className="flex shrink-0 items-center gap-2">
       {problem && <span className="text-xs text-rose-700">{problem}</span>}
       <button
         type="button"
         onClick={toggle}
-        className={`text-xs rounded-full px-3 py-1 border ${
+        className={`shrink-0 whitespace-nowrap text-xs rounded-full px-3 py-1 border ${
           listening ? "bg-rose-600 border-rose-600 text-white" : "border-slate-300 text-slate-700 hover:bg-slate-50"
         }`}
       >

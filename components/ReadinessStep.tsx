@@ -58,7 +58,7 @@ function hours(minutes: number) {
 function RequiredChip({ required }: { required: boolean | null }) {
   if (required === null) return <span className={`${chip} bg-slate-100 text-slate-600`}>Not stated</span>;
   return required ? (
-    <span className={`${chip} bg-rose-50 text-rose-800`}>Required</span>
+    <span className={`${chip} bg-slate-800 text-white`}>Required</span>
   ) : (
     <span className={`${chip} bg-slate-100 text-slate-600`}>Preferred</span>
   );
@@ -199,8 +199,8 @@ function PlanItemCard({
 }) {
   return (
     <div className={`bg-white rounded-xl border p-3 ${done ? "border-emerald-300" : "border-slate-200"}`}>
-      <div className="flex gap-3">
-        <input type="checkbox" checked={done} onChange={onToggle} className="mt-1" aria-label={`Mark "${item.activity}" done`} />
+      <div className="flex items-start gap-3">
+        <input type="checkbox" checked={done} onChange={onToggle} className="mt-1 h-4 w-4 shrink-0" aria-label={`Mark "${item.activity}" done`} />
         <div className="flex-1 min-w-0 space-y-1 text-sm">
           <div className="flex flex-wrap gap-1">
             <span className={`${chip} bg-teal-50 text-teal-800`}>{ACTION[item.action]}</span>

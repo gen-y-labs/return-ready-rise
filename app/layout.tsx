@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ReturnReady",
+  title: "Return Ready Rise",
   description: "Find where your experience fits, and prepare your next application.",
 };
 
