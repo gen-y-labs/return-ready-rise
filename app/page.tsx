@@ -3,6 +3,7 @@
 import { useState } from "react";
 import personasJson from "@/data/personas.json";
 import { AreasStep } from "@/components/AreasStep";
+import { DemoPlayer } from "@/components/DemoPlayer";
 import { Logo } from "@/components/Logo";
 import { ReadinessStep } from "@/components/ReadinessStep";
 import { ResumeStep } from "@/components/ResumeStep";
@@ -339,6 +340,7 @@ export default function Home() {
           />
         )}
       </main>
+      <DemoPlayer />
     </>
   );
 }

@@ -10,6 +10,13 @@ body {
   color: #1e293b;
 }
 
+[data-demo-focus] {
+  outline: 3px solid #a3166f;
+  outline-offset: 4px;
+  border-radius: 12px;
+  transition: outline-color 0.2s;
+}
+
 @media print {
   body {
     background: white;
