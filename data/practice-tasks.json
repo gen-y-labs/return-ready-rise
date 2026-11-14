@@ -1,0 +1,38 @@
+[
+  {
+    "id": "excel-basics",
+    "title": "Excel basics check",
+    "minutes": 30,
+    "task": "In Excel for the web, enter 20 rows of sample data, format it as a table, sort and filter it, and add a SUM total. Many admin interviews include a short spreadsheet exercise like this."
+  },
+  {
+    "id": "office-tools-basics",
+    "title": "Outlook and Teams basics",
+    "minutes": 20,
+    "task": "In a free Outlook.com account, create a recurring meeting and share your calendar. In free Microsoft Teams, start a chat and share a file."
+  },
+  {
+    "id": "excel-lookup-pivot",
+    "title": "Excel lookups and pivot tables",
+    "minutes": 45,
+    "task": "Make a 20-row inventory list in Excel for the web. Use XLOOKUP to pull a supplier name from a second sheet, then build a pivot table of stock by category."
+  },
+  {
+    "id": "google-drive-organization",
+    "title": "Shared folder setup",
+    "minutes": 20,
+    "task": "Create a shared Google Drive folder for an imaginary team project with 3 subfolders, a naming rule, and one shared doc. Write down the naming rule so you can explain it."
+  },
+  {
+    "id": "project-tool-practice",
+    "title": "Simple project timeline",
+    "minutes": 30,
+    "task": "Build a 5-task timeline with owners and due dates in Google Sheets or the free tier of a project tool. Mark one task late and write a two-line status update about it."
+  },
+  {
+    "id": "break-answer-practice",
+    "title": "Practice your break answer",
+    "minutes": 10,
+    "task": "Say your chosen career-break wording out loud three times, then add one sentence on why this role fits you now."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "evidence": [
+    { "id": "e1", "text": "Managed calendars", "source": "paid", "org": "Alpine Property Management", "role": "Administrative Coordinator", "years": "2015–2021", "lastUsedYear": 2021 },
+    { "id": "e2", "text": "Scheduled meetings", "source": "paid", "org": "Alpine Property Management", "role": "Administrative Coordinator", "years": "2015–2021", "lastUsedYear": 2021 },
+    { "id": "e3", "text": "Coordinated vendors", "source": "paid", "org": "Alpine Property Management", "role": "Administrative Coordinator", "years": "2015–2021", "lastUsedYear": 2021 },
+    { "id": "e4", "text": "Prepared reports using Excel", "source": "paid", "org": "Alpine Property Management", "role": "Administrative Coordinator", "years": "2015–2021", "lastUsedYear": 2021 },
+    { "id": "e5", "text": "Helped organize school events", "source": "volunteer", "org": "Children's school", "role": null, "years": "2021–2026", "lastUsedYear": 2026 },
+    { "id": "e6", "text": "Helped organize volunteer schedules", "source": "volunteer", "org": "Children's school", "role": null, "years": "2021–2026", "lastUsedYear": 2026 }
+  ],
+  "skills": [
+    { "id": "s1", "name": "Calendar and meeting management", "evidenceIds": ["e1", "e2"], "note": null },
+    { "id": "s2", "name": "Vendor coordination", "evidenceIds": ["e3"], "note": null },
+    { "id": "s3", "name": "Excel reporting", "evidenceIds": ["e4"], "note": "Last used in 2021." },
+    { "id": "s4", "name": "Event and volunteer coordination", "evidenceIds": ["e5", "e6"], "note": null }
+  ],
+  "careerBreak": {
+    "years": "2021 – 2026",
+    "briefReason": "Family caregiving",
+    "detailedReason": "Raising my children"
+  }
+}

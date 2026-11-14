@@ -1,0 +1,56 @@
+[
+  {
+    "id": "priya",
+    "label": "Priya · back after 5 years raising children",
+    "contact": { "name": "Priya Raman", "email": "priya.r@example.com", "phone": "(801) 555-0107", "location": "American Fork, UT" },
+    "story": {
+      "pastWork": "I worked as an administrative coordinator at Alpine Property Management in Orem for six years, from 2015 to 2021. I managed calendars, scheduled meetings, coordinated vendors, and prepared reports using Excel.",
+      "breakStory": "In 2021 I took a five-year break to raise my children. Now that they're in school, I'm ready to return to work, but I need to finish in time for school pickup.",
+      "breakActivities": "During my break, I helped organize school events and volunteer schedules."
+    },
+    "availability": {
+      "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "start": "09:00",
+      "end": "14:00",
+      "maxHoursPerWeek": 25,
+      "locations": ["Lehi", "American Fork", "Pleasant Grove", "Orem"],
+      "workplace": ["remote", "hybrid", "onsite"]
+    }
+  },
+  {
+    "id": "maria",
+    "label": "Maria · ongoing care, remote only",
+    "contact": { "name": "Maria Alvarez", "email": "maria.a@example.com", "phone": "(801) 555-0123", "location": "Provo, UT" },
+    "story": {
+      "pastWork": "I was a customer support specialist at Bluewave Internet from 2014 to 2022. I answered customer calls and chats about billing and service problems, logged every case in Zendesk, and followed up until it was solved. I also trained new hires on our help-desk scripts.",
+      "breakStory": "Since 2022 I've been caring for a family member with ongoing care needs. Their appointments change from week to week.",
+      "breakActivities": "I manage their appointments, medications, and insurance paperwork. I'd like remote work with predictable hours."
+    },
+    "availability": {
+      "days": ["Mon", "Tue", "Wed", "Thu"],
+      "start": "10:00",
+      "end": "15:00",
+      "maxHoursPerWeek": 20,
+      "locations": [],
+      "workplace": ["remote"]
+    }
+  },
+  {
+    "id": "emily",
+    "label": "Emily · little formal work experience",
+    "contact": { "name": "Emily Carter", "email": "emily.c@example.com", "phone": "(801) 555-0188", "location": "Provo, UT" },
+    "story": {
+      "pastWork": "I worked as a server and host at Riverside Grill in Provo from 2017 to 2019. I greeted guests, took orders, ran the register, and counted the cash drawer at closing.",
+      "breakStory": "From 2020 to now I've been home raising my children.",
+      "breakActivities": "I volunteer in the front office at my kids' elementary school a few mornings a month. I check in visitors, answer questions from parents, and make copies for teachers. I also helped run the checkout table at the school book fair."
+    },
+    "availability": {
+      "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "start": "09:00",
+      "end": "14:00",
+      "maxHoursPerWeek": 25,
+      "locations": ["Provo", "Orem"],
+      "workplace": ["onsite", "hybrid", "remote"]
+    }
+  }
+]

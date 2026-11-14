@@ -1,0 +1,74 @@
+[
+  {
+    "id": "administrative-support",
+    "name": "Administrative support",
+    "searchTerm": "administrative assistant",
+    "keySkills": [
+      { "id": "k1", "text": "Managing calendars and scheduling meetings" },
+      { "id": "k2", "text": "Coordinating vendors or service requests" },
+      { "id": "k3", "text": "Excel data entry and basic reports" },
+      { "id": "k4", "text": "Organizing events or volunteer schedules" },
+      { "id": "k5", "text": "Outlook, Teams, or shared document storage" }
+    ]
+  },
+  {
+    "id": "operations-coordination",
+    "name": "Operations coordination",
+    "searchTerm": "operations coordinator",
+    "keySkills": [
+      { "id": "k1", "text": "Vendor and supplier coordination" },
+      { "id": "k2", "text": "Scheduling deliveries, shifts, or sites" },
+      { "id": "k3", "text": "Inventory or supply tracking" },
+      { "id": "k4", "text": "Excel reporting" },
+      { "id": "k5", "text": "Order or ERP systems (e.g. NetSuite, Shopify)" }
+    ]
+  },
+  {
+    "id": "project-coordination",
+    "name": "Project coordination",
+    "searchTerm": "project coordinator",
+    "keySkills": [
+      { "id": "k1", "text": "Scheduling meetings and keeping timelines" },
+      { "id": "k2", "text": "Coordinating vendors or contractors" },
+      { "id": "k3", "text": "Weekly status reporting" },
+      { "id": "k4", "text": "Tracking a budget" },
+      { "id": "k5", "text": "Project tools (e.g. Asana, Smartsheet)" }
+    ]
+  },
+  {
+    "id": "program-coordination",
+    "name": "Program and volunteer coordination",
+    "searchTerm": "program coordinator",
+    "keySkills": [
+      { "id": "k1", "text": "Recruiting and scheduling volunteers" },
+      { "id": "k2", "text": "Planning events" },
+      { "id": "k3", "text": "Communicating with members or families" },
+      { "id": "k4", "text": "Tracking sign-ups or hours in spreadsheets" },
+      { "id": "k5", "text": "Grant or donor reporting" }
+    ]
+  },
+  {
+    "id": "front-desk-reception",
+    "name": "Front desk and reception",
+    "searchTerm": "receptionist",
+    "keySkills": [
+      { "id": "k1", "text": "Greeting and checking in visitors" },
+      { "id": "k2", "text": "Answering phones and routing calls" },
+      { "id": "k3", "text": "Scheduling appointments" },
+      { "id": "k4", "text": "Handling cash or payments" },
+      { "id": "k5", "text": "Keeping records and the front area organized" }
+    ]
+  },
+  {
+    "id": "customer-support",
+    "name": "Customer support",
+    "searchTerm": "customer service",
+    "keySkills": [
+      { "id": "k1", "text": "Helping customers by phone, chat, or in person" },
+      { "id": "k2", "text": "Resolving billing or order problems" },
+      { "id": "k3", "text": "CRM or ticketing tools (e.g. Zendesk)" },
+      { "id": "k4", "text": "Documenting cases" },
+      { "id": "k5", "text": "Handling difficult conversations" }
+    ]
+  }
+]

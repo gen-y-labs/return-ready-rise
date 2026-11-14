@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReturnReady Mockup</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<style>
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .screen { display: none; }
+  .screen.active { display: block; }
+  .chip { font-size: 11px; padding: 1px 7px; border-radius: 9999px; white-space: nowrap; font-weight: 500; height: fit-content; }
+  .s-supported { background: #d1fae5; color: #065f46; }
+  .s-refresh { background: #e0e7ff; color: #3730a3; }
+  .s-needs_clarification { background: #fef3c7; color: #92400e; }
+  .s-missing { background: #fee2e2; color: #991b1b; }
+  .a-fits { background: #d1fae5; color: #065f46; }
+  .a-conflict { background: #fee2e2; color: #991b1b; }
+  .a-confirm { background: #fef3c7; color: #92400e; }
+  .paper { font-family: Georgia, "Times New Roman", serif; }
+  .listening { background: #dc2626 !important; color: white !important; }
+  @media print {
+    body { background: white; }
+    header, .no-print, .screen:not(#screen-3) { display: none !important; }
+    #screen-3 { display: block !important; }
+    .paper { box-shadow: none !important; border: 0 !important; margin: 0 !important; }
+    .trace, .bullet-actions { display: none !important; }
+  }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-4 justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-teal-600 text-white grid place-items-center font-bold">R</div>
+      <div>
+        <div class="font-semibold">ReturnReady</div>
+        <div class="text-xs text-slate-500">Find where your experience fits, and prepare your next application.</div>
+      </div>
+    </div>
+    <nav class="flex flex-wrap gap-1 text-sm">
+      <button data-step="1" class="step px-3 py-1.5 rounded-full">1 · Tell us your story</button>
+      <button data-step="2" class="step px-3 py-1.5 rounded-full">2 · Your job areas</button>
+      <button data-step="3" class="step px-3 py-1.5 rounded-full">3 · Your résumé</button>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-6">
+
+<!-- SCREEN 1 -->
+<section class="screen" id="screen-1">
+  <h1 class="text-2xl font-semibold">Tell us your story</h1>
+  <p class="text-slate-600 mt-1">Type or speak. Concrete examples help most: what you did, for whom, how often, and when.</p>
+
+  <div class="grid lg:grid-cols-2 gap-6 mt-6">
+    <div class="space-y-4">
+
+      <div class="bg-white rounded-xl border border-slate-200 p-4">
+        <div class="flex justify-between items-center">
+          <label class="font-medium text-sm">1. Your past work</label>
+          <button class="mic text-xs border border-slate-300 rounded-full px-3 py-1 flex items-center gap-1">🎤 <span>Speak</span></button>
+        </div>
+        <textarea class="mt-2 w-full h-36 text-sm border border-slate-300 rounded-lg p-2">Operations Coordinator, Cedar Valley Supply Co., Salt Lake City (2016 to 2020). Coordinated orders and deliveries with 12 vendors. Built the weekly delivery schedule for 3 warehouse sites. Tracked inventory in Excel and sent a weekly stock report...
+
+Office Administrator, Lakeside Family Dental, Murray (2012 to 2016). Managed calendars for 4 providers...
+
+Skills: Excel, Word, Outlook, QuickBooks (basic)</textarea>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 p-4">
+        <div class="flex justify-between items-center">
+          <label class="font-medium text-sm">2. Your career break <span class="text-slate-400 font-normal">(share only what you want)</span></label>
+          <button class="mic text-xs border border-slate-300 rounded-full px-3 py-1 flex items-center gap-1">🎤 <span>Speak</span></button>
+        </div>
+        <textarea class="mt-2 w-full h-16 text-sm border border-slate-300 rounded-lg p-2">From 2020 to now I cared for my father after his stroke and raised my two kids.</textarea>
+        <p class="text-xs text-slate-500 mt-1">You choose later how much of this appears on your résumé. We never add medical details.</p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 p-4">
+        <div class="flex justify-between items-center">
+          <label class="font-medium text-sm">3. What you did during the break</label>
+          <button class="mic text-xs border border-slate-300 rounded-full px-3 py-1 flex items-center gap-1">🎤 <span>Speak</span></button>
+        </div>
+        <textarea class="mt-2 w-full h-24 text-sm border border-slate-300 rounded-lg p-2">I set up and ran the volunteer schedule for my kids' school fall festival in 2023 and 2024, about 40 volunteers across 6 shifts, with a Google Sheets sign-up. I kept the PTA book fair budget, about $3,000, in Google Sheets. For my dad I coordinated appointments with 3 specialists and handled insurance claims and appeals.</textarea>
+        <p class="text-xs text-slate-500 mt-1">Volunteer work, school, community, and family responsibilities all count as context. Speech is turned into text by your browser (Chrome uses Google's servers).</p>
+      </div>
+
+      <details class="bg-white rounded-xl border border-slate-200 p-4" open>
+        <summary class="font-medium text-sm cursor-pointer">4. When and where you can work</summary>
+        <div class="flex flex-wrap gap-2 mt-3 text-sm">
+          <span class="px-3 py-1 rounded-full bg-teal-600 text-white">Mon</span><span class="px-3 py-1 rounded-full bg-teal-600 text-white">Tue</span><span class="px-3 py-1 rounded-full bg-teal-600 text-white">Wed</span><span class="px-3 py-1 rounded-full bg-teal-600 text-white">Thu</span><span class="px-3 py-1 rounded-full bg-teal-600 text-white">Fri</span><span class="px-3 py-1 rounded-full border border-slate-300 text-slate-500">Sat</span><span class="px-3 py-1 rounded-full border border-slate-300 text-slate-500">Sun</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3 text-sm">
+          <label>From<input class="mt-1 w-full border border-slate-300 rounded-lg p-2" value="9:00 a.m."></label>
+          <label>Until<input class="mt-1 w-full border border-slate-300 rounded-lg p-2" value="2:00 p.m."></label>
+          <label>Max hrs/week<input class="mt-1 w-full border border-slate-300 rounded-lg p-2" value="25"></label>
+          <label>Max commute<input class="mt-1 w-full border border-slate-300 rounded-lg p-2" value="30 min"></label>
+        </div>
+        <div class="flex flex-wrap gap-4 mt-3 text-sm items-center">
+          <span class="text-slate-500">From: Sugar House, Salt Lake City</span>
+          <label class="flex items-center gap-2"><input type="checkbox" checked> Remote</label>
+          <label class="flex items-center gap-2"><input type="checkbox" checked> Hybrid</label>
+          <label class="flex items-center gap-2"><input type="checkbox" checked> On-site</label>
+        </div>
+      </details>
+
+      <button class="w-full bg-slate-800 text-white rounded-lg py-2.5 font-medium">Analyze my experience</button>
+      <p class="text-xs text-slate-500">Session only. Nothing is saved after you close this tab.</p>
+    </div>
+
+    <div>
+      <div class="flex items-baseline justify-between">
+        <h2 class="font-semibold">What we found</h2>
+        <span class="text-xs text-slate-500">10 skills · each tied to your own words</span>
+      </div>
+      <div class="space-y-3 mt-3">
+        <div class="bg-white rounded-xl border border-slate-200 p-3">
+          <div class="flex justify-between"><div class="font-medium">Vendor coordination</div><div class="text-xs space-x-2 text-slate-500"><button>Edit</button><button class="rm">Remove</button></div></div>
+          <div class="mt-2 text-sm border-l-2 border-teal-500 pl-2">"Coordinated orders and deliveries with 12 vendors"<div class="text-xs text-slate-500 mt-0.5"><span class="chip bg-teal-50 text-teal-700">Paid work</span> Cedar Valley Supply Co. · 2016–2020</div></div>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-3">
+          <div class="flex justify-between"><div class="font-medium">Scheduling</div><div class="text-xs space-x-2 text-slate-500"><button>Edit</button><button class="rm">Remove</button></div></div>
+          <div class="mt-2 text-sm border-l-2 border-teal-500 pl-2">"Built the weekly delivery schedule for 3 warehouse sites"<div class="text-xs text-slate-500 mt-0.5"><span class="chip bg-teal-50 text-teal-700">Paid work</span> 2016–2020</div></div>
+          <div class="mt-2 text-sm border-l-2 border-indigo-400 pl-2">"About 40 volunteers across 6 shifts, with a Google Sheets sign-up"<div class="text-xs text-slate-500 mt-0.5"><span class="chip bg-indigo-50 text-indigo-700">During break · Volunteer</span> 2023–2024</div></div>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-3">
+          <div class="flex justify-between"><div class="font-medium">Budget tracking</div><div class="text-xs space-x-2 text-slate-500"><button>Edit</button><button class="rm">Remove</button></div></div>
+          <div class="mt-2 text-sm border-l-2 border-teal-500 pl-2">"Ordered office and clinical supplies within a monthly budget"<div class="text-xs text-slate-500 mt-0.5"><span class="chip bg-teal-50 text-teal-700">Paid work</span> 2012–2016</div></div>
+          <div class="mt-2 text-sm border-l-2 border-indigo-400 pl-2">"Kept the PTA book fair budget, about $3,000, in Google Sheets"<div class="text-xs text-slate-500 mt-0.5"><span class="chip bg-indigo-50 text-indigo-700">During break · Volunteer</span> 2024–2025</div></div>
+        </div>
+        <div class="bg-white rounded-xl border border-rose-200 p-3">
+          <div class="flex justify-between"><div class="font-medium">Medical appointments and insurance claims</div><div class="text-xs space-x-2 text-slate-500"><button class="rm">Remove</button></div></div>
+          <div class="mt-2 text-sm border-l-2 border-rose-300 pl-2">"Coordinated appointments with 3 specialists and handled insurance claims and appeals"<div class="text-xs text-slate-500 mt-0.5"><span class="chip bg-rose-50 text-rose-700">During break · Caregiving</span> 2020–2026</div></div>
+          <label class="flex items-center gap-2 text-xs mt-2 text-slate-600"><input type="checkbox"> Use in job matching and résumé (off by default)</label>
+        </div>
+        <div class="bg-amber-50 rounded-xl border border-amber-300 p-3">
+          <div class="flex justify-between"><div class="font-medium">QuickBooks</div><div class="text-xs text-slate-500"><button class="rm">Remove</button></div></div>
+          <p class="text-sm text-amber-800 mt-1">Listed with no example. Add one, or remove this skill.</p>
+          <input class="mt-2 w-full text-sm border border-amber-300 rounded-lg p-2 bg-white" placeholder="What did you do in QuickBooks, and when?">
+        </div>
+        <div class="text-sm text-slate-500 px-1">+ 5 more: Inventory tracking · Excel reporting · Invoices · Insurance verification · Training staff</div>
+      </div>
+      <button data-goto="2" class="mt-5 w-full bg-teal-600 hover:bg-teal-700 text-white rounded-lg py-2.5 font-medium">See my job areas →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SCREEN 2 -->
+<section class="screen" id="screen-2">
+  <div class="flex flex-wrap items-end justify-between gap-2">
+    <div>
+      <h1 class="text-2xl font-semibold">Your job areas</h1>
+      <p class="text-slate-600 mt-1 text-sm">% = key skills shown in your own examples. It is not a hiring prediction.</p>
+    </div>
+    <div class="text-xs bg-white border border-slate-200 rounded-lg px-3 py-2"><span class="font-medium">Your terms:</span> Mon–Fri · 9 a.m.–2 p.m. MT · ≤ 25 hrs · ≤ 30 min from Sugar House</div>
+  </div>
+
+  <div class="grid lg:grid-cols-12 gap-5 mt-5">
+    <div class="lg:col-span-4 space-y-2" id="areas"></div>
+
+    <div class="lg:col-span-5">
+      <div class="flex items-baseline justify-between">
+        <h2 class="font-semibold" id="jobs-title"></h2>
+        <span class="text-xs text-slate-500">Utah · sorted by fit with your hours</span>
+      </div>
+      <div class="mt-3 space-y-3" id="jobs"></div>
+    </div>
+
+    <aside class="lg:col-span-3">
+      <div class="bg-white rounded-xl border border-slate-200 p-4 lg:sticky lg:top-20">
+        <div class="text-xs uppercase tracking-wide text-slate-500">Your résumé</div>
+        <div class="font-semibold mt-1" id="resume-for"></div>
+        <div class="mt-3 border border-slate-200 rounded-lg p-3 bg-slate-50 paper text-[10px] leading-snug text-slate-600 h-44 overflow-hidden">
+          <div class="text-sm font-bold text-slate-800">Maya Thompson</div>
+          <div>Salt Lake City, UT · maya.t@example.com</div>
+          <div class="mt-2 font-bold text-slate-800 uppercase text-[9px] tracking-wider">Experience</div>
+          <div class="mt-1 font-semibold text-slate-700">Career break · Family caregiving <span class="font-normal">2020 – 2026</span></div>
+          <div>• Set up and ran the volunteer schedule for a school fall festival...</div>
+          <div>• Kept the PTA book fair budget in Google Sheets...</div>
+          <div class="mt-1 font-semibold text-slate-700">Operations Coordinator, Cedar Valley Supply Co. <span class="font-normal">2016 – 2020</span></div>
+          <div>• Coordinated orders and deliveries with 12 vendors...</div>
+        </div>
+        <ul class="text-xs text-slate-600 mt-3 space-y-1">
+          <li>✓ Career break shown as a dated entry</li>
+          <li>✓ Every line traced to your words</li>
+          <li class="text-red-700">! 1 line needs your review</li>
+        </ul>
+        <button data-goto="3" class="mt-3 w-full bg-teal-600 hover:bg-teal-700 text-white rounded-lg py-2 font-medium text-sm">Open résumé</button>
+        <div class="mt-4 pt-3 border-t border-slate-100 text-xs">
+          <div class="font-medium text-slate-700">Raise this match</div>
+          <div class="text-slate-600 mt-1">Excel weekly status report · 45 min. Rebuild your old stock report with a SUMIFS total and one chart.</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- SCREEN 3 -->
+<section class="screen" id="screen-3">
+  <div class="grid lg:grid-cols-12 gap-6">
+    <div class="lg:col-span-4 space-y-4 no-print">
+      <div>
+        <div class="text-sm text-slate-500">Résumé for</div>
+        <h1 class="text-xl font-semibold">Operations coordination · 80%</h1>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 p-4">
+        <div class="font-medium text-sm">How should your break appear?</div>
+        <div class="grid grid-cols-3 gap-2 mt-2 text-sm" id="break-opts">
+          <button data-break="minimal" class="bo rounded-lg border px-2 py-1.5">Dates only</button>
+          <button data-break="brief" class="bo rounded-lg border px-2 py-1.5">Brief</button>
+          <button data-break="detailed" class="bo rounded-lg border px-2 py-1.5">Detailed</button>
+        </div>
+        <p class="text-xs text-slate-500 mt-2">Medical details are never added. Your volunteer work stays listed under the break either way.</p>
+      </div>
+
+      <div class="bg-red-50 rounded-xl border border-red-200 p-4 text-sm" id="review-box">
+        <div class="font-medium text-red-800">1 line needs your review</div>
+        <p class="text-red-800 mt-1">"30%" is not in anything you told us. Remove it or replace it with your own number.</p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 p-4 text-sm">
+        <div class="font-medium">Left out on purpose</div>
+        <ul class="text-slate-600 mt-1 space-y-1 text-xs">
+          <li>QuickBooks: no example given</li>
+          <li>Caregiving appointments and claims: not ticked for use</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <button onclick="window.print()" class="bg-teal-600 hover:bg-teal-700 text-white rounded-lg px-4 py-2 font-medium text-sm">Download PDF</button>
+        <button id="copy" class="border border-slate-300 rounded-lg px-4 py-2 text-sm">Copy text</button>
+        <button data-goto="2" class="text-sm text-slate-500 underline px-2">Back to job areas</button>
+      </div>
+    </div>
+
+    <div class="lg:col-span-8">
+      <article class="paper bg-white border border-slate-200 shadow-sm rounded-sm max-w-[8.5in] mx-auto px-6 sm:px-10 py-8 text-[14px] leading-relaxed" id="resume">
+        <h2 class="text-2xl font-bold tracking-tight">Maya Thompson</h2>
+        <div class="text-slate-600 text-sm">Salt Lake City, UT · maya.t@example.com · (801) 555-0142</div>
+
+        <h3 class="mt-5 text-xs font-bold uppercase tracking-widest text-teal-800 border-b border-slate-300 pb-1">Summary</h3>
+        <p class="mt-2" contenteditable="true">Operations coordinator with experience in vendor coordination, delivery scheduling, and Excel inventory reporting. During a 2020–2026 career break, ran the volunteer schedule for a school event of about 40 volunteers and kept an event budget in Google Sheets.</p>
+
+        <h3 class="mt-5 text-xs font-bold uppercase tracking-widest text-teal-800 border-b border-slate-300 pb-1">Experience</h3>
+
+        <div class="mt-3">
+          <div class="flex justify-between gap-4"><span class="font-bold" id="break-title"></span><span class="text-slate-600 shrink-0">2020 – 2026</span></div>
+          <div class="text-slate-600 text-sm italic">Salt Lake City, UT</div>
+          <ul class="mt-1 space-y-1">
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Set up and ran the volunteer schedule for a school fall festival: about 40 volunteers across 6 shifts, using Google Sheets sign-ups and reminder emails.</span><span class="trace chip bg-indigo-50 text-indigo-700 font-sans">Volunteer</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Kept the PTA book fair budget (about $3,000) in Google Sheets and reported totals at PTA meetings.</span><span class="trace chip bg-indigo-50 text-indigo-700 font-sans">Volunteer</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+          </ul>
+        </div>
+
+        <div class="mt-4">
+          <div class="flex justify-between gap-4"><span class="font-bold">Operations Coordinator, Cedar Valley Supply Co.</span><span class="text-slate-600 shrink-0">Jun 2016 – Mar 2020</span></div>
+          <div class="text-slate-600 text-sm italic">Salt Lake City, UT</div>
+          <ul class="mt-1 space-y-1">
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Coordinated orders and deliveries with 12 packaging and equipment vendors.</span><span class="trace chip bg-teal-50 text-teal-700 font-sans">Paid</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Built and maintained the weekly delivery schedule for 3 warehouse sites.</span><span class="trace chip bg-teal-50 text-teal-700 font-sans">Paid</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Tracked inventory levels in Excel and sent a weekly stock report to the operations manager.</span><span class="trace chip bg-teal-50 text-teal-700 font-sans">Paid</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+            <li class="b flex gap-2 bg-red-50 outline outline-1 outline-red-300 rounded px-1 -mx-1" id="flagged"><span>•</span><span class="flex-1" contenteditable="true">Resolved invoice mismatches with accounts payable, cutting payment delays by <mark class="bg-red-200">30%</mark>.</span><button class="bullet-actions rm-b text-xs text-red-700 font-sans font-medium">Remove</button></li>
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Trained 5 new warehouse admin staff on ordering procedures.</span><span class="trace chip bg-teal-50 text-teal-700 font-sans">Paid</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+          </ul>
+        </div>
+
+        <div class="mt-4">
+          <div class="flex justify-between gap-4"><span class="font-bold">Office Administrator, Lakeside Family Dental</span><span class="text-slate-600 shrink-0">Aug 2012 – May 2016</span></div>
+          <div class="text-slate-600 text-sm italic">Murray, UT</div>
+          <ul class="mt-1 space-y-1">
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Managed appointment calendars for 4 providers.</span><span class="trace chip bg-teal-50 text-teal-700 font-sans">Paid</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+            <li class="b flex gap-2 group"><span>•</span><span class="flex-1" contenteditable="true">Ordered office and clinical supplies within a monthly budget.</span><span class="trace chip bg-teal-50 text-teal-700 font-sans">Paid</span><button class="bullet-actions rm-b text-xs text-slate-400 font-sans opacity-0 group-hover:opacity-100">Remove</button></li>
+          </ul>
+        </div>
+
+        <h3 class="mt-5 text-xs font-bold uppercase tracking-widest text-teal-800 border-b border-slate-300 pb-1">Skills</h3>
+        <p class="mt-2">Vendor coordination · Delivery and shift scheduling · Inventory tracking · Microsoft Excel · Google Sheets · Invoice reconciliation</p>
+
+        <h3 class="mt-5 text-xs font-bold uppercase tracking-widest text-teal-800 border-b border-slate-300 pb-1">Education</h3>
+        <p class="mt-2">Associate of Applied Science, Business Management, 2012</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<p class="text-center text-xs text-slate-400 mt-10 no-print">Mockup. Companies, listings, and live results shown here are made up.</p>
+</main>
+
+<script>
+  const areas = [
+    { id: "ops", name: "Operations coordination", pct: 80, shown: "4 of 5 key skills shown", refresh: "Excel (last used 2020)", missing: "Order or ERP system" },
+    { id: "prog", name: "Program and volunteer coordination", pct: 80, shown: "4 of 5 key skills shown, mostly from your break", missing: "Grant or donor reporting" },
+    { id: "admin", name: "Administrative support", pct: 60, shown: "3 of 5 key skills shown", clarify: "Word and Outlook (no example)", missing: "Organizing shared files" },
+    { id: "proj", name: "Project coordination", pct: 60, shown: "3 of 5 key skills shown", refresh: "Status reports", missing: "Asana or Smartsheet" },
+    { id: "health", name: "Healthcare administration", pct: 60, shown: "3 of 5 key skills shown", clarify: "Claims (caregiving only)", missing: "EHR system" },
+    { id: "cs", name: "Customer support", pct: 40, shown: "2 of 5 key skills shown", missing: "CRM tools, documenting cases" },
+  ];
+  const UT = '<span class="chip bg-sky-50 text-sky-800">jobs.utah.gov · saved Nov 14</span>';
+  const AZ = '<span class="chip bg-violet-50 text-violet-800">Adzuna · live</span>';
+  const A = { fits: '<span class="chip a-fits">Fits your hours</span>', conflict: '<span class="chip a-conflict">Conflict</span>', confirm: '<span class="chip a-confirm">Needs confirmation</span>' };
+  const jobs = {
+    ops: [
+      ["Operations Coordinator (Part-Time)", "Wasatch Community Health Center", "Hybrid · Rose Park, 15 min", "$24–$27/hr", "fits", "Core hours 9 a.m.–2 p.m., 25 hrs/week", UT],
+      ["Operations Coordinator (Remote)", "Fieldstone Home Goods", "Remote", "$52k–$58k", "conflict", "Needs you online 9 a.m.–5 p.m. MT, 40 hrs/week. Strong skill match.", UT],
+      ["Operations Specialist", "Granite Peak Outfitters", "Salt Lake City", "$45k–$52k", "confirm", "Hours and workplace not listed. Ask before applying.", AZ],
+      ["Operations Associate, 16-Week Returnship", "Keystone Regional Logistics", "Hybrid · West Valley City, 20 min", "$26/hr", "confirm", "Schedule not listed in the posting.", UT],
+      ["Logistics Coordinator", "Bonneville Freight Services", "On-site · Ogden, 45 min", "$48k–$53k", "conflict", "Starts 7 a.m., 40 hrs/week, commute over 30 min.", UT],
+    ],
+    prog: [
+      ["Volunteer Program Coordinator (Part-Time)", "Valley Food Network", "Hybrid · South Salt Lake, 10 min", "$21/hr", "confirm", "10 a.m.–2 p.m. Mon–Thu fits, plus about one evening event a month.", UT],
+      ["Community Program Assistant", "Bright Futures Youth Alliance", "Salt Lake City", "$19–$22/hr", "confirm", "Hours not listed.", AZ],
+    ],
+    admin: [
+      ["Office Administrator (Part-Time)", "Canyon View Pediatrics", "On-site · Murray, 15 min", "$20–$22/hr", "conflict", "Starts 8 a.m., an hour before you're available.", UT],
+      ["Administrative Coordinator (Remote)", "Tandem Learning", "Remote", "$45k–$50k", "confirm", "Hours not listed. Remote doesn't always mean flexible.", UT],
+      ["Administrative Assistant", "Summit Ridge Property Group", "Sandy, UT", "$40k–$44k", "confirm", "Hours and workplace not listed.", AZ],
+    ],
+  };
+  const order = { fits: 0, confirm: 1, conflict: 2 };
+  let selected = "ops";
+
+  function renderAreas() {
+    document.getElementById("areas").innerHTML = areas.map(a => {
+      const on = a.id === selected;
+      const detail = on ? `
+        <div class="mt-2 text-xs space-y-1">
+          <div class="text-slate-700">${a.shown} in your examples</div>
+          ${a.refresh ? `<div><span class="chip s-refresh">Refresh</span> ${a.refresh}</div>` : ""}
+          ${a.clarify ? `<div><span class="chip s-needs_clarification">Needs clarification</span> ${a.clarify}</div>` : ""}
+          <div><span class="chip s-missing">Missing</span> ${a.missing}</div>
+        </div>` : `<div class="text-xs text-slate-500 mt-1">${a.shown}</div>`;
+      return `<button data-area="${a.id}" class="w-full text-left bg-white rounded-xl border ${on ? "border-teal-500 ring-1 ring-teal-500" : "border-slate-200 hover:border-slate-300"} p-3">
+        <div class="flex justify-between gap-2"><span class="font-medium text-sm">${a.name}</span><span class="font-semibold tabular-nums ${a.pct >= 80 ? "text-teal-700" : "text-slate-600"}">${a.pct}%</span></div>
+        <div class="mt-2 h-1.5 bg-slate-100 rounded-full"><div class="h-1.5 rounded-full ${a.pct >= 80 ? "bg-teal-600" : "bg-slate-400"}" style="width:${a.pct}%"></div></div>
+        ${detail}
+      </button>`;
+    }).join("");
+    document.querySelectorAll("[data-area]").forEach(b => b.onclick = () => { selected = b.dataset.area; render(); });
+  }
+
+  function renderJobs() {
+    const a = areas.find(x => x.id === selected);
+    document.getElementById("jobs-title").textContent = a.name + " jobs";
+    document.getElementById("resume-for").textContent = "Built for " + a.name.toLowerCase();
+    const list = (jobs[selected] || []).slice().sort((x, y) => order[x[4]] - order[y[4]]);
+    document.getElementById("jobs").innerHTML = list.length ? list.map(([t, c, w, pay, st, why, src]) => `
+      <div class="bg-white rounded-xl border ${st === "fits" ? "border-emerald-300" : "border-slate-200"} p-3">
+        <div class="flex justify-between gap-2"><div><div class="font-medium text-sm">${t}</div><div class="text-xs text-slate-500">${c} · ${w} · ${pay}</div></div>${A[st]}</div>
+        <div class="text-xs text-slate-600 mt-2">${why}</div>
+        <div class="flex justify-between items-center mt-2">${src}<a class="text-xs text-teal-700 underline" href="#">View posting ↗</a></div>
+      </div>`).join("") : `<div class="text-sm text-slate-500 bg-white rounded-xl border border-dashed border-slate-300 p-6 text-center">Jobs for this area load from jobs.utah.gov and Adzuna.</div>`;
+  }
+
+  function render() { renderAreas(); renderJobs(); }
+
+  function show(step) {
+    document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active", s.id === "screen-" + step));
+    document.querySelectorAll(".step").forEach(b => {
+      const on = b.dataset.step === String(step);
+      b.className = "step px-3 py-1.5 rounded-full " + (on ? "bg-teal-600 text-white" : "text-slate-600 hover:bg-slate-100");
+    });
+    window.scrollTo(0, 0);
+  }
+  document.querySelectorAll("[data-step]").forEach(b => b.onclick = () => show(b.dataset.step));
+  document.querySelectorAll("[data-goto]").forEach(b => b.onclick = () => show(b.dataset.goto));
+  document.querySelectorAll(".rm").forEach(b => b.onclick = () => b.closest(".rounded-xl").remove());
+  document.querySelectorAll(".rm-b").forEach(b => b.onclick = () => {
+    if (b.closest("li").id === "flagged") document.getElementById("review-box").outerHTML =
+      '<div class="bg-emerald-50 rounded-xl border border-emerald-200 p-4 text-sm text-emerald-800">All lines are traced to your words.</div>';
+    b.closest("li").remove();
+  });
+
+  const titles = { minimal: "Career break", brief: "Career break · Family caregiving", detailed: "Career break · Caregiving for a parent and raising two children" };
+  function pickBreak(k) {
+    document.getElementById("break-title").textContent = titles[k];
+    document.querySelectorAll(".bo").forEach(b => {
+      const on = b.dataset.break === k;
+      b.className = "bo rounded-lg border px-2 py-1.5 " + (on ? "bg-teal-600 text-white border-teal-600" : "border-slate-300 text-slate-600");
+    });
+  }
+  document.querySelectorAll(".bo").forEach(b => b.onclick = () => pickBreak(b.dataset.break));
+  pickBreak("brief");
+
+  document.getElementById("copy").onclick = async (e) => {
+    try { await navigator.clipboard.writeText(document.getElementById("resume").innerText); e.target.textContent = "Copied"; }
+    catch { e.target.textContent = "Copy blocked in this preview"; }
+  };
+
+  const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  document.querySelectorAll(".mic").forEach(btn => {
+    if (!Rec) { btn.title = "Voice input works in Chrome and Edge"; btn.disabled = true; btn.classList.add("opacity-40"); return; }
+    let rec = null;
+    btn.onclick = () => {
+      if (rec) { rec.stop(); return; }
+      const box = btn.closest(".rounded-xl").querySelector("textarea");
+      rec = new Rec();
+      rec.continuous = true; rec.interimResults = false; rec.lang = "en-US";
+      rec.onresult = (ev) => {
+        for (let i = ev.resultIndex; i < ev.results.length; i++) if (ev.results[i].isFinal) box.value += " " + ev.results[i][0].transcript.trim();
+      };
+      rec.onend = () => { rec = null; btn.classList.remove("listening"); btn.querySelector("span").textContent = "Speak"; };
+      rec.start();
+      btn.classList.add("listening"); btn.querySelector("span").textContent = "Stop";
+    };
+  });
+
+  render();
+  show(1);
+</script>
+</body>
+</html>

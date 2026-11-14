@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "categoryId": "administrative-support",
+      "matches": [
+        { "keySkillId": "k1", "status": "supported", "evidenceIds": ["e1", "e2"], "explanation": "Managed calendars and scheduled meetings, 2015–2021.", "question": null },
+        { "keySkillId": "k2", "status": "supported", "evidenceIds": ["e3"], "explanation": "Coordinated vendors.", "question": null },
+        { "keySkillId": "k3", "status": "refresh", "evidenceIds": ["e4"], "explanation": "Prepared Excel reports until 2021. Check you're comfortable with data entry, sorting, filtering, and SUM.", "question": null },
+        { "keySkillId": "k4", "status": "supported", "evidenceIds": ["e5", "e6"], "explanation": "Helped organize school events and volunteer schedules during your break.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention Outlook, Teams, or shared drives. Many employers train on these.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "operations-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "supported", "evidenceIds": ["e3"], "explanation": "Coordinated vendors.", "question": null },
+        { "keySkillId": "k2", "status": "supported", "evidenceIds": ["e6"], "explanation": "Helped organize volunteer schedules.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "No inventory or supply tracking mentioned.", "question": null },
+        { "keySkillId": "k4", "status": "refresh", "evidenceIds": ["e4"], "explanation": "Excel reports until 2021.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No order or ERP system mentioned.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "project-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "supported", "evidenceIds": ["e1", "e2"], "explanation": "Managed calendars and scheduled meetings.", "question": null },
+        { "keySkillId": "k2", "status": "supported", "evidenceIds": ["e3"], "explanation": "Coordinated vendors.", "question": null },
+        { "keySkillId": "k3", "status": "refresh", "evidenceIds": ["e4"], "explanation": "Prepared reports in Excel until 2021.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No budget tracking mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No project tool mentioned.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "program-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "supported", "evidenceIds": ["e6"], "explanation": "Helped organize volunteer schedules.", "question": null },
+        { "keySkillId": "k2", "status": "needs_clarification", "evidenceIds": ["e5"], "explanation": "You helped organize school events. Your part is unclear.", "question": "What was your part in organizing the school events?" },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "No example of communicating with members or families.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No spreadsheet tracking of sign-ups mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No grant or donor reporting mentioned.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "front-desk-reception",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "No visitor check-in mentioned.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "No phone work mentioned.", "question": null },
+        { "keySkillId": "k3", "status": "needs_clarification", "evidenceIds": ["e1"], "explanation": "You managed calendars, but it's unclear whether you booked appointments for visitors.", "question": "Did you book appointments for clients or visitors, or internal meetings only?" },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No cash or payment handling mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No record-keeping mentioned.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "customer-support",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "No customer-facing work mentioned.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "No billing or order problems mentioned.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "No CRM or ticketing tool mentioned.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No case documentation mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No example of a difficult conversation.", "question": null }
+      ]
+    }
+  ]
+}
