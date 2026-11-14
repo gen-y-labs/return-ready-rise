@@ -2,55 +2,113 @@
   {
     "id": "priya",
     "label": "Priya · back after 5 years raising children",
-    "contact": { "name": "Priya Raman", "email": "priya.r@example.com", "phone": "(801) 555-0107", "location": "American Fork, UT" },
+    "contact": {
+      "name": "Priya Raman",
+      "email": "priya.r@example.com",
+      "phone": "(801) 555-0107",
+      "location": "American Fork, UT"
+    },
     "story": {
       "pastWork": "I worked as an administrative coordinator at Alpine Property Management in Orem for six years, from 2015 to 2021. I managed calendars, scheduled meetings, coordinated vendors, and prepared reports using Excel.",
       "breakStory": "In 2021 I took a five-year break to raise my children. Now that they're in school, I'm ready to return to work, but I need to finish in time for school pickup.",
       "breakActivities": "During my break, I helped organize school events and volunteer schedules."
     },
     "availability": {
-      "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
       "start": "09:00",
       "end": "14:00",
       "maxHoursPerWeek": 25,
-      "locations": ["Lehi", "American Fork", "Pleasant Grove", "Orem"],
-      "workplace": ["remote", "hybrid", "onsite"]
+      "locations": [
+        "Lehi",
+        "American Fork",
+        "Pleasant Grove",
+        "Orem"
+      ],
+      "workplace": [
+        "remote",
+        "hybrid",
+        "onsite"
+      ]
     }
   },
   {
-    "id": "maria",
-    "label": "Maria · ongoing care, remote only",
-    "contact": { "name": "Maria Alvarez", "email": "maria.a@example.com", "phone": "(801) 555-0123", "location": "Provo, UT" },
+    "id": "david",
+    "label": "David · back after eldercare, full-time",
+    "contact": {
+      "name": "David Reyes",
+      "email": "david.r@example.com",
+      "phone": "(801) 555-0161",
+      "location": "Sandy, UT"
+    },
     "story": {
-      "pastWork": "I was a customer support specialist at Bluewave Internet from 2014 to 2022. I answered customer calls and chats about billing and service problems, logged every case in Zendesk, and followed up until it was solved. I also trained new hires on our help-desk scripts.",
-      "breakStory": "Since 2022 I've been caring for a family member with ongoing care needs. Their appointments change from week to week.",
-      "breakActivities": "I manage their appointments, medications, and insurance paperwork. I'd like remote work with predictable hours."
+      "pastWork": "I was an operations manager at Summit Freight Logistics in Salt Lake City from 2016 to 2024, and an operations coordinator there from 2012 to 2016. As manager I led a team of 14 dispatchers and warehouse leads, owned a $2.1 million annual operating budget, and cut late deliveries by 18% by redesigning our route schedule. I also chose and managed our three main trucking vendors.",
+      "breakStory": "In 2024 I left to care for my mother after a serious illness. She is doing well now, and I'm ready to go back to full-time work.",
+      "breakActivities": "While caring for her I managed her appointments and insurance paperwork. I also volunteer as treasurer for our neighborhood association, tracking a $40,000 yearly budget in Excel and presenting it at quarterly meetings."
     },
     "availability": {
-      "days": ["Mon", "Tue", "Wed", "Thu"],
-      "start": "10:00",
-      "end": "15:00",
-      "maxHoursPerWeek": 20,
-      "locations": [],
-      "workplace": ["remote"]
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:00",
+      "end": "17:00",
+      "maxHoursPerWeek": 40,
+      "locations": [
+        "Salt Lake City",
+        "Sandy",
+        "Draper",
+        "West Valley City"
+      ],
+      "workplace": [
+        "onsite",
+        "hybrid",
+        "remote"
+      ]
     }
   },
   {
     "id": "emily",
     "label": "Emily · little formal work experience",
-    "contact": { "name": "Emily Carter", "email": "emily.c@example.com", "phone": "(801) 555-0188", "location": "Provo, UT" },
+    "contact": {
+      "name": "Emily Carter",
+      "email": "emily.c@example.com",
+      "phone": "(801) 555-0188",
+      "location": "Provo, UT"
+    },
     "story": {
       "pastWork": "I worked as a server and host at Riverside Grill in Provo from 2017 to 2019. I greeted guests, took orders, ran the register, and counted the cash drawer at closing.",
       "breakStory": "From 2020 to now I've been home raising my children.",
       "breakActivities": "I volunteer in the front office at my kids' elementary school a few mornings a month. I check in visitors, answer questions from parents, and make copies for teachers. I also helped run the checkout table at the school book fair."
     },
     "availability": {
-      "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
       "start": "09:00",
       "end": "14:00",
       "maxHoursPerWeek": 25,
-      "locations": ["Provo", "Orem"],
-      "workplace": ["onsite", "hybrid", "remote"]
+      "locations": [
+        "Provo",
+        "Orem"
+      ],
+      "workplace": [
+        "onsite",
+        "hybrid",
+        "remote"
+      ]
     }
   }
 ]

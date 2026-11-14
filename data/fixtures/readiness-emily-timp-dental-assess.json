@@ -1,0 +1,34 @@
+{
+  "requirements": [
+    {
+      "id": "r1",
+      "text": "Greet patients and answer phones",
+      "kind": "skill",
+      "required": true,
+      "status": "partial",
+      "evidenceIds": ["e1", "e5"],
+      "uncertain": "You've greeted guests and check in visitors, but your profile doesn't mention answering phones.",
+      "question": "Have you answered phones at the restaurant or the school office? What kinds of calls?"
+    },
+    {
+      "id": "r2",
+      "text": "Take payments",
+      "kind": "skill",
+      "required": true,
+      "status": "met",
+      "evidenceIds": ["e3", "e4", "e8"],
+      "uncertain": "",
+      "question": null
+    },
+    {
+      "id": "r3",
+      "text": "Dental or medical office experience",
+      "kind": "experience",
+      "required": false,
+      "status": "not_shown",
+      "evidenceIds": [],
+      "uncertain": "Your profile doesn't show dental or medical office work. The posting says they train you on their scheduling software.",
+      "question": "Have you worked or volunteered in a dental or medical office?"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "evidence": [
+    { "id": "e1", "text": "Greeted guests", "source": "paid", "org": "Riverside Grill", "role": "Server and host", "years": "2017–2019", "lastUsedYear": 2019 },
+    { "id": "e2", "text": "Took orders", "source": "paid", "org": "Riverside Grill", "role": "Server and host", "years": "2017–2019", "lastUsedYear": 2019 },
+    { "id": "e3", "text": "Ran the register", "source": "paid", "org": "Riverside Grill", "role": "Server and host", "years": "2017–2019", "lastUsedYear": 2019 },
+    { "id": "e4", "text": "Counted the cash drawer at closing", "source": "paid", "org": "Riverside Grill", "role": "Server and host", "years": "2017–2019", "lastUsedYear": 2019 },
+    { "id": "e5", "text": "Check in visitors in the school front office", "source": "volunteer", "org": "Elementary school front office", "role": null, "years": "2020–2026", "lastUsedYear": 2026 },
+    { "id": "e6", "text": "Answer questions from parents", "source": "volunteer", "org": "Elementary school front office", "role": null, "years": "2020–2026", "lastUsedYear": 2026 },
+    { "id": "e7", "text": "Make copies for teachers", "source": "volunteer", "org": "Elementary school front office", "role": null, "years": "2020–2026", "lastUsedYear": 2026 },
+    { "id": "e8", "text": "Helped run the checkout table at the school book fair", "source": "volunteer", "org": "Elementary school", "role": null, "years": "2020–2026", "lastUsedYear": 2026 }
+  ],
+  "skills": [
+    { "id": "s1", "name": "Greeting and checking in visitors", "evidenceIds": ["e1", "e5"], "note": null },
+    { "id": "s2", "name": "Cash handling", "evidenceIds": ["e3", "e4", "e8"], "note": null },
+    { "id": "s3", "name": "Answering questions", "evidenceIds": ["e6"], "note": null },
+    { "id": "s4", "name": "Taking orders", "evidenceIds": ["e2"], "note": null },
+    { "id": "s5", "name": "Office support", "evidenceIds": ["e7"], "note": null }
+  ],
+  "careerBreak": { "years": "2020 – 2026", "briefReason": "Family caregiving", "detailedReason": "Raising young children" }
+}

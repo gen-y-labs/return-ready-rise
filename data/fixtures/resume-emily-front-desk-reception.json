@@ -1,0 +1,28 @@
+{
+  "summary": {
+    "text": "Front-of-house worker with restaurant experience greeting guests, taking orders, and handling the register and cash drawer. During a career break, volunteered in a school front office, checking in visitors and answering parents' questions.",
+    "evidenceIds": ["e1", "e2", "e3", "e4", "e5", "e6"]
+  },
+  "breakBullets": [
+    { "id": "b1", "text": "Checked in visitors in an elementary school front office.", "evidenceIds": ["e5"] },
+    { "id": "b2", "text": "Answered questions from parents.", "evidenceIds": ["e6"] },
+    { "id": "b3", "text": "Made copies for teachers.", "evidenceIds": ["e7"] },
+    { "id": "b4", "text": "Helped run the checkout table at the school book fair.", "evidenceIds": ["e8"] }
+  ],
+  "experience": [
+    {
+      "title": "Server and Host",
+      "org": "Riverside Grill",
+      "location": "Provo, UT",
+      "dates": "2017 – 2019",
+      "bullets": [
+        { "id": "b5", "text": "Greeted guests and took orders.", "evidenceIds": ["e1", "e2"] },
+        { "id": "b6", "text": "Ran the register and counted the cash drawer at closing.", "evidenceIds": ["e3", "e4"] }
+      ]
+    }
+  ],
+  "practiceBullets": [],
+  "skills": ["Greeting visitors", "Cash handling", "Answering questions", "Taking orders", "Office support"],
+  "education": [],
+  "prepTasks": []
+}

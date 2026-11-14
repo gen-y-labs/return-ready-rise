@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "categoryId": "front-desk-reception",
+      "matches": [
+        { "keySkillId": "k1", "status": "supported", "evidenceIds": ["e1", "e5"], "explanation": "You greeted guests at the restaurant and check in visitors at the school office.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention answering phones.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention scheduling appointments.", "question": null },
+        { "keySkillId": "k4", "status": "supported", "evidenceIds": ["e3", "e4", "e8"], "explanation": "You ran the register, counted the cash drawer, and helped run a checkout table.", "question": null },
+        { "keySkillId": "k5", "status": "needs_clarification", "evidenceIds": ["e7"], "explanation": "You help in the school office, but record keeping isn't described.", "question": "Do you help keep any records in the school office, such as visitor sign-in sheets?" }
+      ]
+    },
+    {
+      "categoryId": "customer-support",
+      "matches": [
+        { "keySkillId": "k1", "status": "supported", "evidenceIds": ["e1", "e2", "e6"], "explanation": "You served restaurant guests and answer parents' questions.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention resolving billing or order problems.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "You didn't name a CRM or ticketing tool.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention documenting cases.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't describe a difficult conversation.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "program-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention recruiting or scheduling volunteers.", "question": null },
+        { "keySkillId": "k2", "status": "needs_clarification", "evidenceIds": ["e8"], "explanation": "You helped at the book fair, but your part in planning it is unclear.", "question": "Did you help plan the book fair, or work at it on the day?" },
+        { "keySkillId": "k3", "status": "supported", "evidenceIds": ["e6"], "explanation": "You answer questions from parents.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention tracking sign-ups or hours.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention grant or donor reporting.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "administrative-support",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention managing calendars.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention coordinating vendors.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention Excel.", "question": null },
+        { "keySkillId": "k4", "status": "needs_clarification", "evidenceIds": ["e8"], "explanation": "You helped at a school event, but organizing it isn't described.", "question": "Did you help organize any school events or volunteer schedules?" },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention Outlook, Teams, or shared drives.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "operations-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "No vendor coordination mentioned.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "No scheduling of deliveries or shifts mentioned.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "No inventory tracking mentioned.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No Excel reporting mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No order system mentioned.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "project-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "No project timelines mentioned.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "No vendor or contractor work mentioned.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "No status reporting mentioned.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No budget tracking mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No project tool mentioned.", "question": null }
+      ]
+    }
+  ]
+}

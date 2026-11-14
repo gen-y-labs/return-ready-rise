@@ -1,0 +1,22 @@
+{
+  "evidence": [
+    { "id": "e1", "text": "Led a team of 14 dispatchers and warehouse leads", "source": "paid", "org": "Summit Freight Logistics", "role": "Operations Manager", "years": "2016–2024", "lastUsedYear": 2024 },
+    { "id": "e2", "text": "Owned a $2.1 million annual operating budget", "source": "paid", "org": "Summit Freight Logistics", "role": "Operations Manager", "years": "2016–2024", "lastUsedYear": 2024 },
+    { "id": "e3", "text": "Cut late deliveries by 18% by redesigning our route schedule", "source": "paid", "org": "Summit Freight Logistics", "role": "Operations Manager", "years": "2016–2024", "lastUsedYear": 2024 },
+    { "id": "e4", "text": "Chose and managed our three main trucking vendors", "source": "paid", "org": "Summit Freight Logistics", "role": "Operations Manager", "years": "2016–2024", "lastUsedYear": 2024 },
+    { "id": "e5", "text": "Worked as an operations coordinator", "source": "paid", "org": "Summit Freight Logistics", "role": "Operations Coordinator", "years": "2012–2016", "lastUsedYear": 2016 },
+    { "id": "e6", "text": "Managed my mother's appointments and insurance paperwork", "source": "caregiving", "org": null, "role": null, "years": "2024–2026", "lastUsedYear": 2026 },
+    { "id": "e7", "text": "Tracked a $40,000 yearly budget in Excel as treasurer for our neighborhood association", "source": "volunteer", "org": "Neighborhood association", "role": "Treasurer", "years": "2024–2026", "lastUsedYear": 2026 },
+    { "id": "e8", "text": "Presented the budget at quarterly meetings", "source": "volunteer", "org": "Neighborhood association", "role": "Treasurer", "years": "2024–2026", "lastUsedYear": 2026 }
+  ],
+  "skills": [
+    { "id": "s1", "name": "Team leadership", "evidenceIds": ["e1"], "note": null },
+    { "id": "s2", "name": "Budget ownership", "evidenceIds": ["e2", "e7"], "note": null },
+    { "id": "s3", "name": "Route and delivery improvement", "evidenceIds": ["e3"], "note": null },
+    { "id": "s4", "name": "Vendor management", "evidenceIds": ["e4"], "note": null },
+    { "id": "s5", "name": "Excel reporting", "evidenceIds": ["e7"], "note": null },
+    { "id": "s6", "name": "Presenting to groups", "evidenceIds": ["e8"], "note": null },
+    { "id": "s7", "name": "Appointment and insurance coordination", "evidenceIds": ["e6"], "note": "Caregiving example. Kept as context unless you choose to use it." }
+  ],
+  "careerBreak": { "years": "2024 – 2026", "briefReason": "Family caregiving", "detailedReason": "Caring for a parent" }
+}

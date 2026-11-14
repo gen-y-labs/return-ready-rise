@@ -697,5 +697,200 @@
         "required": false
       }
     ]
+  },
+  {
+    "source": "sample",
+    "url": null,
+    "capturedAt": null,
+    "categoryId": "operations-coordination",
+    "id": "granite-peak-ops-manager",
+    "postedAt": "2026-11-14T07:30:00-07:00",
+    "title": "Operations Manager",
+    "company": "Granite Peak Distribution",
+    "location": "Salt Lake City, UT",
+    "workplace": "onsite",
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:00",
+      "end": "17:00",
+      "hoursPerWeek": 40
+    },
+    "scheduleText": "Full-time, on-site, 8 a.m.–5 p.m., Monday to Friday.",
+    "pay": "$78,000–$88,000/yr",
+    "summary": "Lead daily warehouse and delivery operations for a regional distributor with two shifts of staff.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "5+ years of operations or logistics experience, including people management",
+        "kind": "experience",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Own an operating budget and report on it monthly",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Manage carrier and vendor relationships",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "Improve on-time delivery using data",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r5",
+        "text": "Experience with a warehouse management system (WMS)",
+        "kind": "tool",
+        "required": false
+      }
+    ]
+  },
+  {
+    "source": "sample",
+    "url": null,
+    "capturedAt": null,
+    "categoryId": "operations-coordination",
+    "id": "keystone-ops-returnship",
+    "postedAt": "2026-11-11T09:00:00-07:00",
+    "title": "Operations Manager Returnship (16 weeks, paid)",
+    "company": "Keystone Regional Logistics",
+    "location": "Draper, UT",
+    "workplace": "hybrid",
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "08:30",
+      "end": "17:00",
+      "hoursPerWeek": 40
+    },
+    "scheduleText": "Full-time, 8:30 a.m.–5 p.m. Hybrid: on-site Mon, Wed, Thu. Path to a permanent role.",
+    "pay": "$38/hr",
+    "summary": "A paid returnship for experienced operations leaders coming back after a career break of 2+ years.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Career break of 2 or more years",
+        "kind": "experience",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Prior experience managing an operations team",
+        "kind": "experience",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Comfortable with Excel for budgets and reports",
+        "kind": "tool",
+        "required": true
+      },
+      {
+        "id": "r4",
+        "text": "Lean or Six Sigma certification",
+        "kind": "credential",
+        "required": false
+      }
+    ]
+  },
+  {
+    "source": "sample",
+    "url": null,
+    "capturedAt": null,
+    "categoryId": "operations-coordination",
+    "id": "wasatch-freight-supervisor",
+    "postedAt": "2026-11-13T08:00:00-07:00",
+    "title": "Logistics Operations Supervisor",
+    "company": "Wasatch Freight Partners",
+    "location": "West Valley City, UT",
+    "workplace": "onsite",
+    "schedule": {
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "start": "06:00",
+      "end": "14:30",
+      "hoursPerWeek": 40
+    },
+    "scheduleText": "Early shift, 6 a.m.–2:30 p.m., Monday to Friday.",
+    "pay": "$64,000–$70,000/yr",
+    "summary": "Supervise the early dock shift and coordinate outbound trucks.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Supervise a dock or warehouse team",
+        "kind": "experience",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Coordinate outbound carriers",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Forklift certification",
+        "kind": "credential",
+        "required": false
+      }
+    ]
+  },
+  {
+    "source": "sample",
+    "url": null,
+    "capturedAt": null,
+    "categoryId": "operations-coordination",
+    "id": "beehive-senior-ops-coordinator",
+    "postedAt": "2026-11-06T09:00:00-07:00",
+    "title": "Senior Operations Coordinator (Hybrid)",
+    "company": "Beehive Health Network",
+    "location": "Sandy, UT",
+    "workplace": "hybrid",
+    "schedule": null,
+    "scheduleText": "Full-time, hybrid. Hours not listed.",
+    "pay": "$62,000–$68,000/yr",
+    "summary": "Coordinate supplies, vendors, and reporting across six clinics.",
+    "requirements": [
+      {
+        "id": "r1",
+        "text": "Coordinate vendors and supply contracts",
+        "kind": "skill",
+        "required": true
+      },
+      {
+        "id": "r2",
+        "text": "Build monthly operations reports in Excel",
+        "kind": "tool",
+        "required": true
+      },
+      {
+        "id": "r3",
+        "text": "Healthcare operations experience",
+        "kind": "experience",
+        "required": false
+      }
+    ]
   }
 ]

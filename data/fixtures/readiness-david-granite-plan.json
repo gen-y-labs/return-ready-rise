@@ -1,0 +1,59 @@
+{
+  "items": [
+    {
+      "requirementId": "r2",
+      "action": "improve_profile",
+      "activity": "Describe how you reported on the budget: how often, to whom, and what the report covered.",
+      "why": "Monthly budget reporting is required, and your profile shows the budget but not the reporting.",
+      "minutes": 10,
+      "doneWhen": "Your example names the frequency, the audience, and what the report included.",
+      "evidenceToAdd": "Add the example to your profile once you've confirmed it's accurate.",
+      "priority": "before_applying",
+      "searchSuggestions": []
+    },
+    {
+      "requirementId": "r2",
+      "action": "demonstrate",
+      "activity": "Build a sample 12-month budget-versus-actual sheet in Excel with a variance column and a one-paragraph monthly summary.",
+      "why": "A short work sample shows current comfort with budget reporting after your break.",
+      "minutes": 30,
+      "doneWhen": "Variances calculate correctly for each month, and the summary names the largest one.",
+      "evidenceToAdd": "Add it as a clearly labeled practice project.",
+      "priority": "before_applying",
+      "searchSuggestions": ["Excel budget vs actual template", "monthly variance report example"]
+    },
+    {
+      "requirementId": "r4",
+      "action": "improve_profile",
+      "activity": "Write two sentences on the data you used to redesign the route schedule and what changed as a result.",
+      "why": "The role asks you to improve on-time delivery using data, and your 18% result is strong once the method is clear.",
+      "minutes": 10,
+      "doneWhen": "Your example names the data you used and the change you made.",
+      "evidenceToAdd": "Add the example to your profile once you've confirmed it's accurate.",
+      "priority": "before_applying",
+      "searchSuggestions": []
+    },
+    {
+      "requirementId": "r5",
+      "action": "ask_employer",
+      "activity": "Ask which warehouse management system the team uses and whether training is provided.",
+      "why": "This is a preferred skill, and many employers train on their own system.",
+      "minutes": 5,
+      "doneWhen": "You know which system they use and whether training covers it.",
+      "evidenceToAdd": "",
+      "priority": "ask_employer",
+      "searchSuggestions": []
+    },
+    {
+      "requirementId": "r5",
+      "action": "learn",
+      "activity": "Learn the basic warehouse management system workflow: receiving, put-away, picking, and shipping.",
+      "why": "Knowing the common workflow helps you learn their system quickly.",
+      "minutes": 30,
+      "doneWhen": "You can explain each step and the report a manager would check at the end of a shift.",
+      "evidenceToAdd": "",
+      "priority": "alongside_applying",
+      "searchSuggestions": ["warehouse management system basics", "WMS receiving put-away picking overview"]
+    }
+  ]
+}

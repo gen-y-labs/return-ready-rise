@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "requirementId": "r1",
+      "action": "refresh",
+      "activity": "Write a short phone greeting and a message-taking script for a dental office, then practice it out loud.",
+      "why": "Answering phones is required, and your profile shows greeting people in person but not on the phone.",
+      "minutes": 20,
+      "doneWhen": "You can greet the caller, take a name, number, and reason for the call, and read it back.",
+      "evidenceToAdd": "Describe what you practiced, as a practice project.",
+      "priority": "before_applying",
+      "searchSuggestions": ["dental office phone greeting examples", "how to take a phone message"]
+    },
+    {
+      "requirementId": "r1",
+      "action": "demonstrate",
+      "activity": "Make a 5-row sample phone message log with time, caller, reason, callback number, and follow-up.",
+      "why": "A small work sample shows you can keep phone messages organized.",
+      "minutes": 20,
+      "doneWhen": "Every row has all five fields filled in.",
+      "evidenceToAdd": "Add it as a clearly labeled practice project.",
+      "priority": "before_applying",
+      "searchSuggestions": ["phone message log template"]
+    },
+    {
+      "requirementId": "r3",
+      "action": "ask_employer",
+      "activity": "Ask whether front-desk experience from a restaurant and a school office counts, since the posting says they train you on their scheduling software.",
+      "why": "Dental experience is preferred, not required, and the employer already offers training.",
+      "minutes": 5,
+      "doneWhen": "You know whether your front-desk experience is accepted.",
+      "evidenceToAdd": "",
+      "priority": "ask_employer",
+      "searchSuggestions": []
+    },
+    {
+      "requirementId": "r3",
+      "action": "learn",
+      "activity": "Read an overview of a dental front desk's daily tasks: check-in, insurance cards, scheduling, and payments.",
+      "why": "Knowing the daily routine helps you answer interview questions with confidence.",
+      "minutes": 30,
+      "doneWhen": "You can describe a typical patient visit from check-in to payment.",
+      "evidenceToAdd": "",
+      "priority": "alongside_applying",
+      "searchSuggestions": ["dental front desk daily tasks", "dental receptionist duties"]
+    }
+  ]
+}

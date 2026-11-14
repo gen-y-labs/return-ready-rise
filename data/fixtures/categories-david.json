@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "categoryId": "operations-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "supported", "evidenceIds": ["e4"], "explanation": "You chose and managed three main trucking vendors.", "question": null },
+        { "keySkillId": "k2", "status": "supported", "evidenceIds": ["e3"], "explanation": "You redesigned the route schedule and cut late deliveries by 18%.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention inventory or supply tracking.", "question": null },
+        { "keySkillId": "k4", "status": "supported", "evidenceIds": ["e7"], "explanation": "You track a $40,000 budget in Excel as a volunteer treasurer.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't name an order or ERP system.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "project-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "needs_clarification", "evidenceIds": ["e3"], "explanation": "You redesigned a route schedule, but meeting and timeline work isn't described.", "question": "Did you run project timelines or regular team meetings as operations manager?" },
+        { "keySkillId": "k2", "status": "supported", "evidenceIds": ["e4"], "explanation": "You managed three trucking vendors.", "question": null },
+        { "keySkillId": "k3", "status": "needs_clarification", "evidenceIds": ["e8"], "explanation": "You present a budget quarterly; weekly status reporting isn't described.", "question": "Did you send weekly status reports to leadership? What did they cover?" },
+        { "keySkillId": "k4", "status": "supported", "evidenceIds": ["e2", "e7"], "explanation": "You owned a $2.1 million operating budget.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't name a project tool.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "administrative-support",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention managing calendars.", "question": null },
+        { "keySkillId": "k2", "status": "supported", "evidenceIds": ["e4"], "explanation": "You managed trucking vendors.", "question": null },
+        { "keySkillId": "k3", "status": "supported", "evidenceIds": ["e7"], "explanation": "You track a budget in Excel.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention organizing events.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention Outlook, Teams, or shared drives.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "program-coordination",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention recruiting volunteers.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention planning events.", "question": null },
+        { "keySkillId": "k3", "status": "needs_clarification", "evidenceIds": ["e8"], "explanation": "You present to association members, but other member communication isn't described.", "question": "Do you also email or update association members between meetings?" },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention tracking sign-ups or hours.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "You didn't mention grant or donor reporting.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "front-desk-reception",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "No visitor check-in mentioned.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "No phone work mentioned.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "No appointment scheduling for visitors mentioned.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No cash or payment handling mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No front-office record keeping mentioned.", "question": null }
+      ]
+    },
+    {
+      "categoryId": "customer-support",
+      "matches": [
+        { "keySkillId": "k1", "status": "missing", "evidenceIds": [], "explanation": "No customer-facing work mentioned.", "question": null },
+        { "keySkillId": "k2", "status": "missing", "evidenceIds": [], "explanation": "No billing or order problems mentioned.", "question": null },
+        { "keySkillId": "k3", "status": "missing", "evidenceIds": [], "explanation": "No CRM or ticketing tool mentioned.", "question": null },
+        { "keySkillId": "k4", "status": "missing", "evidenceIds": [], "explanation": "No case documentation mentioned.", "question": null },
+        { "keySkillId": "k5", "status": "missing", "evidenceIds": [], "explanation": "No example of a difficult conversation.", "question": null }
+      ]
+    }
+  ]
+}

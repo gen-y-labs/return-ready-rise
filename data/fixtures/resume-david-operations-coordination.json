@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "text": "Operations manager who led a team of 14 dispatchers and warehouse leads, owned a $2.1 million operating budget, and managed trucking vendors at Summit Freight Logistics. During a career break, tracked a $40,000 yearly budget in Excel as a neighborhood association treasurer.",
+    "evidenceIds": ["e1", "e2", "e4", "e7"]
+  },
+  "breakBullets": [
+    { "id": "b1", "text": "Tracked a $40,000 yearly budget in Excel as treasurer for a neighborhood association.", "evidenceIds": ["e7"] },
+    { "id": "b2", "text": "Presented the budget at quarterly association meetings.", "evidenceIds": ["e8"] }
+  ],
+  "experience": [
+    {
+      "title": "Operations Manager",
+      "org": "Summit Freight Logistics",
+      "location": "Salt Lake City, UT",
+      "dates": "2016 – 2024",
+      "bullets": [
+        { "id": "b3", "text": "Led a team of 14 dispatchers and warehouse leads.", "evidenceIds": ["e1"] },
+        { "id": "b4", "text": "Owned a $2.1 million annual operating budget.", "evidenceIds": ["e2"] },
+        { "id": "b5", "text": "Cut late deliveries by 18% by redesigning the route schedule.", "evidenceIds": ["e3"] },
+        { "id": "b6", "text": "Chose and managed the three main trucking vendors.", "evidenceIds": ["e4"] }
+      ]
+    },
+    {
+      "title": "Operations Coordinator",
+      "org": "Summit Freight Logistics",
+      "location": "Salt Lake City, UT",
+      "dates": "2012 – 2016",
+      "bullets": [{ "id": "b7", "text": "Worked as an operations coordinator.", "evidenceIds": ["e5"] }]
+    }
+  ],
+  "practiceBullets": [],
+  "skills": ["Team leadership", "Budget ownership", "Vendor management", "Route and delivery improvement", "Microsoft Excel", "Presenting to groups"],
+  "education": [],
+  "prepTasks": [{ "taskId": "excel-lookup-pivot", "keySkillId": "k3" }]
+}
